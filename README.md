@@ -8,7 +8,7 @@ Live site: <https://gaibian005.github.io/portfolio/>
 
 | | |
 | --- | --- |
-| Portfolio (15 pages, Chinese) | [`portfolio/Xin-Weicheng-Portfolio.pdf`](./portfolio/Xin-Weicheng-Portfolio.pdf) |
+| Portfolio (14 pages, Chinese) | [`portfolio/Xin-Weicheng-Portfolio.pdf`](./portfolio/Xin-Weicheng-Portfolio.pdf) |
 | Interactive prototype | [`prototype/`](./prototype/) — open `index.html` |
 | Resume | [`resumes/Xin-Weicheng-Resume-EN.pdf`](./resumes/Xin-Weicheng-Resume-EN.pdf) |
 
@@ -24,7 +24,7 @@ Contact: (+86) 177 7119 5591 · 418794028@qq.com
 
 | | |
 | --- | --- |
-| 作品集（15 页，中文） | [`portfolio/Xin-Weicheng-Portfolio.pdf`](./portfolio/Xin-Weicheng-Portfolio.pdf) |
+| 作品集（14 页，中文） | [`portfolio/Xin-Weicheng-Portfolio.pdf`](./portfolio/Xin-Weicheng-Portfolio.pdf) |
 | 可交互原型 | [`prototype/`](./prototype/) — 直接打开 `index.html` |
 | 简历 | [`resumes/Xin-Weicheng-Resume-CN.pdf`](./resumes/Xin-Weicheng-Resume-CN.pdf) |
 
