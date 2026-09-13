@@ -3,160 +3,741 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Weicheng Xin - Digital Product Manager Portfolio</title>
-<meta name="description" content="Portfolio of Weicheng Xin, a digital product manager focused on finance digitalisation and hands-on AI delivery.">
+<title>Weicheng Xin · Digital Product Manager Portfolio</title>
+<meta name="description" content="Portfolio of Weicheng Xin, a digital product manager: finance digitalisation, an expense control system that shipped, master-data engineering, and hands-on AI delivery.">
+<meta name="theme-color" content="#0B1B2E">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230F2B46'/><text x='50' y='68' font-size='56' font-family='Helvetica' font-weight='bold' fill='%23fff' text-anchor='middle'>W</text></svg>">
 <style>
   :root {
-    --navy: #0F2B46;
+    --navy: #0B1B2E;
+    --navy-2: #0F2B46;
     --blue: #2563EB;
-    --blue-light: #EAF1FE;
-    --ink: #15212F;
+    --blue-soft: #EAF1FE;
+    --teal: #0F8A8A;
+    --teal-soft: #E3F4F4;
+    --green: #1B8F6B;
+    --green-soft: #E9F3EE;
+    --purple: #6D5BD0;
+    --purple-soft: #EDEAFB;
+    --ink: #16212F;
     --gray: #5B6675;
-    --line: #DCE3EC;
-    --bg: #F5F7FB;
+    --gray-l: #8A94A2;
+    --line: #E2E8F0;
+    --bg: #F6F8FB;
+    --white: #FFFFFF;
+    --shadow-s: 0 1px 2px rgba(15, 43, 70, .06), 0 8px 24px rgba(15, 43, 70, .06);
+    --shadow-m: 0 2px 4px rgba(15, 43, 70, .06), 0 18px 48px rgba(15, 43, 70, .10);
+    --radius: 16px;
+    --maxw: 1120px;
   }
+
   * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
-                 "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    background: var(--white);
     color: var(--ink);
-    background: #fff;
-    line-height: 1.65;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", Helvetica, Arial, sans-serif;
+    line-height: 1.66;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
-  header { border-top: 5px solid var(--navy); padding: 64px 0 40px; }
-  .eyebrow { color: var(--blue); font-weight: 700; font-size: 13px; letter-spacing: .04em; }
-  h1 { font-size: 40px; margin: 10px 0 6px; color: var(--navy); letter-spacing: -.01em; }
-  h2.role { font-size: 19px; color: var(--blue); margin: 0 0 22px; font-weight: 700; }
-  .lede { font-size: 17px; color: var(--ink); max-width: 720px; }
-  .lede-zh { color: var(--gray); font-size: 14px; margin-top: 8px; }
-  .chips { margin: 22px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
-  .chips li {
-    background: var(--blue-light); color: #1B4FD8; font-size: 13px; font-weight: 600;
-    padding: 5px 13px; border-radius: 999px;
+
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3, h4 { margin: 0; line-height: 1.25; letter-spacing: -0.01em; font-weight: 700; }
+  p { margin: 0; }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* ---------------- 顶部导航 ---------------- */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    transition: background .35s ease, box-shadow .35s ease, backdrop-filter .35s ease;
   }
-  section { padding: 36px 0; border-top: 1px solid var(--line); }
-  h3 { font-size: 19px; color: var(--navy); margin: 0 0 16px; }
-  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  .nav.solid {
+    background: rgba(255, 255, 255, .82);
+    backdrop-filter: saturate(180%) blur(14px);
+    box-shadow: 0 1px 0 rgba(15, 43, 70, .07);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -.01em; }
+  .brand-mark {
+    width: 30px; height: 30px; border-radius: 9px; flex: 0 0 auto;
+    background: linear-gradient(140deg, var(--navy-2), var(--blue));
+    color: #fff; display: grid; place-items: center; font-size: 14px; font-weight: 700;
+  }
+  .nav-links { display: flex; align-items: center; gap: 26px; font-size: 14px; color: var(--gray); }
+  .nav-links a { position: relative; padding: 4px 0; transition: color .2s ease; }
+  .nav-links a::after {
+    content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 0;
+    background: var(--blue); transition: width .28s cubic-bezier(.4, 0, .2, 1);
+  }
+  .nav-links a:hover { color: var(--navy); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    font-size: 13.5px; font-weight: 600; padding: 8px 16px; border-radius: 999px;
+    border: 1px solid var(--line); color: var(--navy); background: #fff;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: var(--shadow-s); border-color: #C9D6E6; }
+
+  /* ---------------- 首屏 ---------------- */
+  .hero {
+    position: relative; overflow: hidden;
+    padding: 152px 0 0;
+    background: linear-gradient(180deg, #F7F9FC 0%, #FFFFFF 68%);
+  }
+  .hero .wrap { padding-bottom: 40px; }
+  .orb { position: absolute; border-radius: 50%; filter: blur(58px); opacity: .5; pointer-events: none; }
+  .orb-1 { width: 460px; height: 460px; top: -160px; right: -90px;
+           background: radial-gradient(circle at 30% 30%, #9DC2FF, #EAF1FE 70%); }
+  .orb-2 { width: 380px; height: 380px; bottom: -180px; left: -120px;
+           background: radial-gradient(circle at 40% 40%, #B6E6E6, #E9F3EE 70%); }
+  .orb-3 { width: 280px; height: 280px; top: 40%; left: 46%;
+           background: radial-gradient(circle at 50% 50%, #D9D2FA, transparent 70%); opacity: .38; }
+  .grid-lines {
+    position: absolute; inset: 0; pointer-events: none; opacity: .5;
+    background-image: linear-gradient(rgba(15, 43, 70, .035) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(15, 43, 70, .035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 78% 62% at 50% 26%, #000 42%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 78% 62% at 50% 26%, #000 42%, transparent 100%);
+  }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-size: 12.5px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase;
+    color: var(--blue); background: #fff; border: 1px solid var(--line);
+    padding: 7px 14px; border-radius: 999px; box-shadow: var(--shadow-s);
+  }
+  .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--green); position: relative; }
+  .pulse::after {
+    content: ""; position: absolute; inset: -4px; border-radius: 50%;
+    border: 2px solid rgba(27, 143, 107, .45); animation: pulse 2.2s ease-out infinite;
+  }
+  @keyframes pulse {
+    0% { transform: scale(.7); opacity: .9; }
+    70% { transform: scale(1.6); opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  .hero h1 { margin: 26px 0 0; font-size: clamp(38px, 6.2vw, 70px); letter-spacing: -.035em; color: var(--navy); }
+  .hero h1 .accent {
+    background: linear-gradient(100deg, var(--blue) 0%, #4F46E5 55%, var(--teal) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero-sub { margin-top: 22px; font-size: 17px; color: var(--gray); max-width: 660px; }
+  .hero-cn { margin-top: 14px; font-size: 15px; color: var(--gray-l); max-width: 660px; }
+
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 13px 22px; border-radius: 12px; font-size: 14.5px; font-weight: 600;
+    transition: transform .22s cubic-bezier(.34, 1.56, .64, 1), box-shadow .22s ease,
+                background .22s ease, color .22s ease;
+  }
+  .btn-primary { background: var(--navy-2); color: #fff; box-shadow: var(--shadow-s); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-m); background: #123456; }
+  .btn-ghost { background: #fff; color: var(--navy); border: 1px solid var(--line); }
+  .btn-ghost:hover { transform: translateY(-2px); box-shadow: var(--shadow-s); border-color: #C9D6E6; }
+  .btn svg { width: 17px; height: 17px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
+  .chip {
+    font-size: 12.5px; font-weight: 600; color: var(--navy-2);
+    background: #fff; border: 1px solid var(--line); padding: 6px 13px; border-radius: 999px;
+  }
+
+  /* ---------------- 数据条 ---------------- */
+  .stats {
+    display: grid; gap: 1px;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--line); border: 1px solid var(--line);
+    border-bottom: none; border-radius: var(--radius) var(--radius) 0 0;
+    overflow: hidden; box-shadow: var(--shadow-s);
+    transform: translateY(30px);
+  }
+  .stat { background: #fff; padding: 24px 22px; }
+  .stat b {
+    display: block; font-size: 30px; letter-spacing: -.03em; line-height: 1.1;
+    color: var(--navy); font-variant-numeric: tabular-nums;
+  }
+  .stat span { display: block; margin-top: 7px; font-size: 13px; color: var(--gray); }
+
+  /* ---------------- 通用区块 ---------------- */
+  section { padding: 96px 0; }
+  .band { background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .sec-head { max-width: 720px; }
+  .sec-kicker {
+    font-size: 12.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--blue);
+  }
+  .sec-head h2 { margin-top: 12px; font-size: clamp(26px, 3.4vw, 38px); color: var(--navy); letter-spacing: -.028em; }
+  .sec-head p { margin-top: 14px; color: var(--gray); font-size: 15.5px; }
+
+  /* ---------------- 层级图例 ---------------- */
+  .legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .legend-item {
+    display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;
+    padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); background: #fff;
+  }
+  .dot { width: 9px; height: 9px; border-radius: 3px; flex: 0 0 auto; }
+  .dot-core { background: var(--blue); }
+  .dot-support { background: var(--teal); }
+  .dot-backer { background: var(--purple); }
+
+  /* ---------------- 项目卡片 ---------------- */
+  .projects { display: grid; gap: 22px; margin-top: 46px; }
+  .project {
+    position: relative; display: grid; grid-template-columns: 1.55fr 1fr; gap: 40px;
+    background: #fff; border: 1px solid var(--line); border-radius: 20px;
+    padding: 34px 36px; box-shadow: var(--shadow-s);
+    transition: transform .32s cubic-bezier(.2, .8, .2, 1), box-shadow .32s ease, border-color .32s ease;
+    overflow: hidden;
+  }
+  .project::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    background: var(--accent, var(--blue));
+    transform: scaleY(0); transform-origin: top; transition: transform .45s cubic-bezier(.2, .8, .2, 1);
+  }
+  .project:hover { transform: translateY(-4px); box-shadow: var(--shadow-m); border-color: #D3DEEB; }
+  .project:hover::before { transform: scaleY(1); }
+  .project.core { background: linear-gradient(180deg, #FFFFFF 0%, #FBFCFE 100%); }
+
+  .tier {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 11.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+    padding: 5px 11px; border-radius: 999px; color: var(--accent-text, var(--blue));
+    background: var(--accent-soft, var(--blue-soft));
+  }
+  .project h3 { margin-top: 14px; font-size: 22px; color: var(--navy); letter-spacing: -.02em; }
+  .project .role { margin-top: 9px; font-size: 14px; color: var(--gray); }
+  .project ul { margin: 20px 0 0; padding: 0; list-style: none; display: grid; gap: 9px; }
+  .project li { position: relative; padding-left: 20px; font-size: 14.5px; color: #2C3A4B; }
+  .project li::before {
+    content: ""; position: absolute; left: 4px; top: .62em;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--accent, var(--blue)); opacity: .55;
+  }
+  .metrics { display: grid; gap: 12px; align-content: start; }
+  .metric {
+    background: var(--bg); border-radius: 13px; padding: 15px 16px; border: 1px solid #EDF1F6;
+  }
+  .metric b { display: block; font-size: 22px; color: var(--navy); letter-spacing: -.02em; line-height: 1.2; }
+  .metric span { display: block; margin-top: 5px; font-size: 12.5px; color: var(--gray); }
+
+  /* ---------------- 时间线 ---------------- */
+  .timeline { margin-top: 44px; position: relative; padding-left: 22px; }
+  .timeline::before {
+    content: ""; position: absolute; left: 5px; top: 6px; bottom: 6px; width: 2px;
+    background: linear-gradient(180deg, var(--blue), var(--teal), var(--green));
+    opacity: .28;
+  }
+  .tl-item { position: relative; padding: 0 0 30px 0; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: ""; position: absolute; left: -22px; top: 7px; width: 12px; height: 12px;
+    border-radius: 50%; background: #fff; border: 2.5px solid var(--blue);
+  }
+  .tl-item.green::before { border-color: var(--green); }
+  .tl-date { font-size: 12.5px; font-weight: 700; letter-spacing: .04em; color: var(--blue); }
+  .tl-item.green .tl-date { color: var(--green); }
+  .tl-title { margin-top: 5px; font-size: 16.5px; font-weight: 700; color: var(--navy); }
+  .tl-body { margin-top: 6px; font-size: 14px; color: var(--gray); max-width: 720px; }
+
+  /* ---------------- 能力网格 ---------------- */
+  .grid-3 { display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); margin-top: 44px; }
   .card {
-    display: block; text-decoration: none; color: inherit;
-    border: 1px solid var(--line); border-radius: 12px; padding: 20px;
-    transition: border-color .15s ease, transform .15s ease;
+    background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 26px 24px;
+    box-shadow: var(--shadow-s);
+    transition: transform .3s cubic-bezier(.2, .8, .2, 1), box-shadow .3s ease;
   }
-  .card:hover { border-color: var(--blue); transform: translateY(-2px); }
-  .card .k { font-size: 12px; font-weight: 700; color: var(--blue); letter-spacing: .04em; text-transform: uppercase; }
-  .card .t { font-size: 17px; font-weight: 700; color: var(--navy); margin: 6px 0; }
-  .card .d { font-size: 14px; color: var(--gray); margin: 0; }
-  ul.plain { padding-left: 20px; margin: 0; }
-  ul.plain li { margin-bottom: 10px; }
-  .stats { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
-  .stat { background: var(--bg); border-radius: 10px; padding: 16px; }
-  .stat b { display: block; font-size: 22px; color: var(--blue); line-height: 1.2; }
-  .stat span { font-size: 13px; color: var(--gray); }
-  table { width: 100%; border-collapse: collapse; font-size: 14px; }
-  th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
-  th { background: var(--navy); color: #fff; font-weight: 600; }
-  th:first-child { border-top-left-radius: 8px; }
-  th:last-child { border-top-right-radius: 8px; }
-  footer { padding: 32px 0 60px; color: var(--gray); font-size: 13px; border-top: 1px solid var(--line); }
-  a { color: var(--blue); }
-  @media (max-width: 560px) { h1 { font-size: 30px; } header { padding-top: 40px; } }
+  .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-m); }
+  .card .ico {
+    width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+    background: var(--blue-soft); color: var(--blue); margin-bottom: 16px;
+  }
+  .card .ico svg { width: 21px; height: 21px; }
+  .card h4 { font-size: 16.5px; color: var(--navy); }
+  .card p { margin-top: 10px; font-size: 14px; color: var(--gray); }
+  .card .flow { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .flow span {
+    font-size: 11.5px; font-weight: 600; padding: 4px 9px; border-radius: 7px;
+    background: var(--bg); color: var(--gray); border: 1px solid #E9EEF4;
+  }
+
+  /* ---------------- 文档清单 ---------------- */
+  .docs { margin-top: 40px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .doc {
+    display: flex; align-items: flex-start; gap: 13px; padding: 17px 18px;
+    background: #fff; border: 1px solid var(--line); border-radius: 14px;
+    transition: transform .26s ease, box-shadow .26s ease, border-color .26s ease;
+  }
+  .doc:hover { transform: translateY(-3px); box-shadow: var(--shadow-s); border-color: #D3DEEB; }
+  .doc svg { width: 18px; height: 18px; color: var(--blue); flex: 0 0 auto; margin-top: 3px; }
+  .doc b { display: block; font-size: 14.5px; color: var(--navy); }
+  .doc span { display: block; margin-top: 4px; font-size: 13px; color: var(--gray); }
+
+  /* ---------------- 联系 ---------------- */
+  .contact {
+    background: var(--navy); color: #fff; padding: 92px 0 56px; position: relative; overflow: hidden;
+  }
+  .contact .orb-1 { top: -180px; left: -80px; right: auto; opacity: .18;
+                    background: radial-gradient(circle at 30% 30%, #4F7FD6, transparent 70%); }
+  .contact .orb-2 { bottom: -200px; right: -60px; left: auto; opacity: .16;
+                    background: radial-gradient(circle at 40% 40%, #2FA8A8, transparent 70%); }
+  .contact h2 { font-size: clamp(26px, 3.6vw, 40px); letter-spacing: -.03em; max-width: 640px; }
+  .contact .lead { margin-top: 16px; color: #A9BDD6; font-size: 15.5px; max-width: 620px; }
+  .contact-grid {
+    margin-top: 42px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: rgba(255, 255, 255, .13); border: 1px solid rgba(255, 255, 255, .13);
+    border-radius: 14px; overflow: hidden;
+  }
+  .contact-grid div { background: rgba(255, 255, 255, .035); padding: 18px 20px; }
+  .contact-grid span { display: block; font-size: 11.5px; letter-spacing: .08em;
+                       text-transform: uppercase; color: #7E93AE; }
+  .contact-grid b { display: block; margin-top: 7px; font-size: 14.5px; color: #fff; font-weight: 600; }
+  .contact-grid a { border-bottom: 1px solid rgba(255, 255, 255, .28); }
+  .contact-grid a:hover { border-color: #fff; }
+  .foot {
+    margin-top: 48px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .13);
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between;
+    font-size: 12.5px; color: #7E93AE;
+  }
+
+  /* ---------------- 进场动效 ---------------- */
+  .js .reveal { opacity: 0; transform: translateY(26px); }
+  .js .reveal.in {
+    opacity: 1; transform: none;
+    transition: opacity .7s cubic-bezier(.2, .8, .2, 1), transform .7s cubic-bezier(.2, .8, .2, 1);
+  }
+  .reveal.d1.in { transition-delay: .08s; }
+  .reveal.d2.in { transition-delay: .16s; }
+  .reveal.d3.in { transition-delay: .24s; }
+  .reveal.d4.in { transition-delay: .32s; }
+
+  /* ---------------- 滚动进度 ---------------- */
+  .progress {
+    position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 120;
+    background: linear-gradient(90deg, var(--blue), var(--teal));
+    transition: width .1s linear;
+  }
+
+  @media (max-width: 900px) {
+    .project { grid-template-columns: 1fr; gap: 26px; padding: 28px 24px; }
+    .projects { gap: 18px; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .docs { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: repeat(2, 1fr); }
+    .nav-links { display: none; }
+    .hero { padding: 132px 0 72px; }
+    section { padding: 72px 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .reveal { opacity: 1; transform: none; }
+    .orb, .pulse::after { animation: none; }
+    * { transition-duration: .01ms !important; }
+  }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <div class="eyebrow">2027 GRADUATE · PORTFOLIO</div>
-    <h1>Weicheng Xin</h1>
-    <h2 class="role">Digital Product Manager</h2>
-    <p class="lede">
-      I understand finance operations, and I can turn processes into systems that actually ship.
-      My work sits between business and engineering: defining the problem, designing the solution,
-      and removing the repetitive work with AI and scripts.
-    </p>
-    <p class="lede-zh">
-      懂财务业务，也能用 AI 把流程做成能上线的系统。
-    </p>
-    <ul class="chips">
-      <li>Finance &amp; Audit Background</li>
-      <li>End-to-end Product Delivery</li>
-      <li>Hands-on AI Implementation</li>
-    </ul>
+<div class="progress" id="progress"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">
+      <span class="brand-mark">W</span>
+      <span>Weicheng Xin</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#skills">Skills</a>
+      <a href="#documents">Deliverables</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="portfolio/Xin-Weicheng-Portfolio.pdf">Portfolio PDF</a>
   </div>
 </header>
 
-<section>
-  <div class="wrap">
-    <h3>Start here</h3>
-    <div class="grid">
-      <a class="card" href="./portfolio/Xin-Weicheng-Portfolio.pdf">
-        <div class="k">PDF · 19 pages · Chinese</div>
-        <div class="t">Portfolio</div>
-        <p class="d">Four case studies: an overseas expense control system, master-data cleanup,
-        a conversational market-insight assistant, and AI automation in finance.</p>
-      </a>
-      <a class="card" href="./prototype/">
-        <div class="k">Live prototype · mobile</div>
-        <div class="t">Market Insight Assistant</div>
-        <p class="d">A clickable high-fidelity prototype of a conversational assistant for
-        non-expert investors, with evidence chains and a tri-state attribution model.</p>
-      </a>
+<main>
+
+  <!-- ============ Hero ============ -->
+  <section class="hero">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-lines"></div>
+    <div class="wrap">
+      <span class="eyebrow reveal"><span class="pulse"></span>2027 Graduate · Digital Product Manager</span>
+      <h1 class="reveal d1">I turn finance operations into<br><span class="accent">systems that actually ship.</span></h1>
+      <p class="hero-sub reveal d2">
+        Over three internships I moved from audit into product: defining the problem with the people who live
+        with it, writing the solution development can build, and removing the repetitive, error-prone work with
+        AI and scripts.
+      </p>
+      <p class="hero-cn reveal d2">
+        懂财务业务，也能用 AI 把流程做成能上线的系统——这是我在每个项目里反复验证的一件事。
+      </p>
+      <div class="hero-actions reveal d3">
+        <a class="btn btn-primary" href="portfolio/Xin-Weicheng-Portfolio.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+          Read the 15-page portfolio
+        </a>
+        <a class="btn btn-ghost" href="prototype/index.html" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+          Open the live prototype
+        </a>
+      </div>
+      <div class="chips reveal d4">
+        <span class="chip">Finance &amp; audit background</span>
+        <span class="chip">End-to-end product delivery</span>
+        <span class="chip">Master data engineering</span>
+        <span class="chip">Hands-on AI implementation</span>
+      </div>
+
+      <div class="stats reveal d4">
+        <div class="stat"><b data-count="85" data-suffix="%+">0</b><span>Invoice &amp; contract records loaded into the master-data hub</span></div>
+        <div class="stat"><b data-count="90" data-suffix="%+">0</b><span>Supplier records loaded into the master-data hub</span></div>
+        <div class="stat"><b data-count="80" data-suffix="%+">0</b><span>Dual-flow match rate across two independent evidence trails</span></div>
+        <div class="stat"><b data-count="9" data-prefix="Sep " data-suffix="">0</b><span>Expense control system went live — development 20 days early</span></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="wrap">
-    <h3>Selected numbers</h3>
-    <div class="stats">
-      <div class="stat"><b>85%+</b><span>invoice &amp; contract data loaded into the master-data hub</span></div>
-      <div class="stat"><b>90%+</b><span>supplier data loaded into the master-data hub</span></div>
-      <div class="stat"><b>80%+</b><span>match rate between the two legacy workflows (MD5, file size, text, SAP cross-links)</span></div>
-      <div class="stat"><b>8</b><span>accounting-automation requirements shipped, 80% less manual time</span></div>
+  <!-- ============ Work ============ -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-kicker">Selected work</div>
+        <h2>Four pieces, three tiers</h2>
+        <p>
+          One core case carries the product claim. Two supporting cases prove the method and the trust design.
+          One backing study shows how I read rules that are still being written.
+        </p>
+      </div>
+      <div class="legend reveal d1">
+        <span class="legend-item"><span class="dot dot-core"></span>Core case</span>
+        <span class="legend-item"><span class="dot dot-support"></span>Supporting case</span>
+        <span class="legend-item"><span class="dot dot-backer"></span>Backing study</span>
+      </div>
+
+      <div class="projects">
+
+        <article class="project core reveal" style="--accent: #2563EB; --accent-soft: #EAF1FE; --accent-text: #1B4FD8;">
+          <div>
+            <span class="tier">★ Core case</span>
+            <h3>Overseas expense control system</h3>
+            <div class="role">COROS Sports Technology · Finance digitalisation · May–Sep 2026 · Second product manager</div>
+            <ul>
+              <li>Wrote the phase-one requirements and the product solution: nine modules covering suppliers, contracts, invoices, payment write-offs, accounting vouchers, permissions and coding rules.</li>
+              <li>Designed three independent approval flows and the boundaries to four external systems — master data hub, SAP, Feishu and Docusign.</li>
+              <li>Led the cleanup of more than ten thousand legacy documents into master data the system could go live on.</li>
+              <li>Went live on 1 September 2026; development finished 20 days ahead of plan.</li>
+            </ul>
+          </div>
+          <div class="metrics">
+            <div class="metric"><b>1 Sep 2026</b><span>System went live — I stayed through launch day</span></div>
+            <div class="metric"><b>9 modules</b><span>Requirements written and designed end to end</span></div>
+            <div class="metric"><b>−20 days</b><span>Development completed ahead of the plan</span></div>
+            <div class="metric"><b>Confirmed offer</b><span>Full-time return offer at the end of the internship</span></div>
+          </div>
+        </article>
+
+        <article class="project reveal d1" style="--accent: #0F8A8A; --accent-soft: #E3F4F4; --accent-text: #0B6E6E;">
+          <div>
+            <span class="tier">◆ Supporting case</span>
+            <h3>Document master-data extraction &amp; cleanup</h3>
+            <div class="role">Data owner · 2026 · Tens of thousands of files, two disconnected workflows</div>
+            <ul>
+              <li>Split the cleanup into 11 layered parallel sections to cut database write contention and model drift.</li>
+              <li>Text-layer extraction first, OCR fallback for scans, multimodal parsing for hard layouts — all mapped into SQLite as JSON.</li>
+              <li>Matched records through two independent trails: file fingerprint (MD5, size, text) versus the document-to-SAP path.</li>
+              <li>Low-confidence and conflicting records go to a separate human queue with a recorded reason — never a silent failure.</li>
+            </ul>
+          </div>
+          <div class="metrics">
+            <div class="metric"><b>85%+</b><span>Invoice and contract records into the master-data hub</span></div>
+            <div class="metric"><b>90%+</b><span>Supplier records into the master-data hub</span></div>
+            <div class="metric"><b>70%+</b><span>In-transit contracts, drawdowns and exceptions</span></div>
+            <div class="metric"><b>1–2 months</b><span>Manual finance workload saved</span></div>
+          </div>
+        </article>
+
+        <article class="project reveal d2" style="--accent: #1B8F6B; --accent-soft: #E9F3EE; --accent-text: #12694F;">
+          <div>
+            <span class="tier">◆ Supporting case</span>
+            <h3>Market insight assistant · product design without a reference</h3>
+            <div class="role">Tencent AI Bootcamp · Product manager · Aug–Sep 2026</div>
+            <ul>
+              <li>Defined a conversational assistant for non-expert investors: plain-language briefings plus 24/7 anomaly detection on watchlist instruments.</li>
+              <li>Designed a nine-step pipeline from data collection to behaviour feedback, with RAG evidence and a compliance check before anything reaches the user.</li>
+              <li>Built the trust model: three output states (evidence / weak evidence / unknown), every conclusion backed by a drill-down evidence chain.</li>
+              <li>Set the launch bar myself: L1–L4 grading, four red lines, and a rollback switch that must be rehearsed before launch.</li>
+            </ul>
+          </div>
+          <div class="metrics">
+            <div class="metric"><b>L3 / L4</b><span>Staged rollout at L3; full launch at L4 with complaints ≤ 4%</span></div>
+            <div class="metric"><b>4 red lines</b><span>Any hit means no-go — including a failed "unknown" state</span></div>
+            <div class="metric"><b>9 steps</b><span>From data collection to behaviour feedback</span></div>
+            <div class="metric"><b>Live</b><span>Clickable high-fidelity prototype, open to anyone</span></div>
+          </div>
+        </article>
+
+        <article class="project reveal d3" style="--accent: #6D5BD0; --accent-soft: #EDEAFB; --accent-text: #574AB0;">
+          <div>
+            <span class="tier">○ Backing study</span>
+            <h3>EU product-access compliance study</h3>
+            <div class="role">KPMG briefing on EU market access · research and company-view analysis</div>
+            <ul>
+              <li>Worked through three regimes — IAA, CBAM and the Deforestation Regulation — and their timelines.</li>
+              <li>Judged the trajectory: short term ambiguous and case-driven, mid term social and governance, long term hard environmental requirements.</li>
+              <li>Concluded that compliance has no absolute yes or no: it needs structured data and a confidence judgement, which means systems deserve deliberate redundancy.</li>
+            </ul>
+          </div>
+          <div class="metrics">
+            <div class="metric"><b>3 regimes</b><span>IAA · CBAM · Deforestation Regulation</span></div>
+            <div class="metric"><b>190+ lines</b><span>Tariff lines and quotas proposed under CBAM</span></div>
+            <div class="metric"><b>2027.09.30</b><span>First quota declaration deadline for importers</span></div>
+            <div class="metric"><b>Design redundancy</b><span>What it changed in how I scope systems</span></div>
+          </div>
+        </article>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="wrap">
-    <h3>Experience</h3>
-    <table>
-      <tr><th>Period</th><th>Role</th><th>Focus</th></tr>
-      <tr><td>May - Aug 2026</td><td>COROS · Finance Department</td>
-          <td>Overseas expense control system: phase-1 requirements, solution design, master-data migration</td></tr>
-      <tr><td>Nov 2025 - Jan 2026</td><td>Dewu · AI Operations</td>
-          <td>10+ AI use cases scoped across finance and data operations; rollout and adoption</td></tr>
-      <tr><td>Jun - Sep 2025</td><td>Tianzhi International CPA</td>
-          <td>FMCG IPO audit: working papers, walkthrough testing, internal control findings</td></tr>
-    </table>
-  </div>
-</section>
+  <!-- ============ Timeline ============ -->
+  <section id="timeline" class="band">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-kicker">Timeline</div>
+        <h2>From audit, to AI operations, to shipping a system</h2>
+        <p>Three internships that build on each other rather than sitting side by side.</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item green reveal">
+          <div class="tl-date">MAY – SEP 2026</div>
+          <div class="tl-title">COROS · Finance digitalisation</div>
+          <div class="tl-body">
+            Second product manager on the overseas expense control system, from kick-off on 6 July through launch on
+            1 September. Requirements completed end of May, solution fixed in early June, development done 25 August
+            (20 days ahead of plan), acceptance 26–27 August, UAT 27–31 August, live 1 September. I ended the
+            internship on launch day with a full-time offer, to return to university and focus on the graduate season.
+          </div>
+        </div>
+        <div class="tl-item reveal d1">
+          <div class="tl-date">NOV 2025 – JAN 2026</div>
+          <div class="tl-title">Dewu · AI operations</div>
+          <div class="tl-body">
+            Tracked LLM, agent and tooling market movement and development routes; published weekly and monthly
+            reports; supported agile delivery and rollout for AI products and automation tools.
+          </div>
+        </div>
+        <div class="tl-item reveal d2">
+          <div class="tl-date">JUN – SEP 2025</div>
+          <div class="tl-title">Tianzhi International CPA · FMCG IPO audit</div>
+          <div class="tl-body">
+            Prepared AR/AP working papers and ran full walkthrough tests from document to statement. In due
+            diligence I standardised finance data and flagged two control gaps: rebate expenses with no automated
+            validation, and related-party flows tagged by hand.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section>
-  <div class="wrap">
-    <h3>About this repository</h3>
-    <ul class="plain">
-      <li><code>portfolio/</code> - the 18-page portfolio PDF (desensitised; demo data only).</li>
-      <li><code>prototype/</code> - source of the interactive market-insight prototype
-          (HTML5 + CSS3 + vanilla JavaScript, no framework, runs offline).</li>
-    </ul>
-    <p style="color: var(--gray); font-size: 14px; margin-top: 16px;">
-      All company-internal data in this repository has been desensitised: personal names are replaced
-      with role names, internal links and system addresses removed, and figures shown are either
-      verified counts or clearly stated estimates.
-    </p>
-  </div>
-</section>
+  <!-- ============ Skills ============ -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-kicker">How I work</div>
+        <h2>Product work and AI work, in the same loop</h2>
+        <p>Product defines the problem and the acceptance bar; AI and scripts remove the repetitive part in between.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card reveal">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h4>Product: six steps, each with an artefact</h4>
+          <p>Every step produces something the next person can use — no step ends in a conversation only.</p>
+          <div class="flow"><span>Interviews</span><span>Scope</span><span>Process</span><span>Requirements</span><span>Dev hand-off</span><span>Acceptance</span></div>
+        </div>
+        <div class="card reveal d1">
+          <div class="ico" style="background: var(--teal-soft); color: var(--teal);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+          </div>
+          <h4>Data: two trails before anything is trusted</h4>
+          <p>File fingerprint against system path. Two independent trails must agree, or the record goes to a human.</p>
+          <div class="flow"><span>Extraction</span><span>OCR</span><span>11 parallel sections</span><span>Cross-check</span><span>JSON + Excel</span></div>
+        </div>
+        <div class="card reveal d2">
+          <div class="ico" style="background: var(--green-soft); color: var(--green);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+          </div>
+          <h4>AI: an agent is more than a model</h4>
+          <p>Model, tools, permissions, state, execution loop and acceptance rules. The last two decide whether it can run in production.</p>
+          <div class="flow"><span>Codex</span><span>Gemini</span><span>Agent workflows</span><span>Prompt engineering</span><span>Acceptance rules</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <div class="wrap">
-    Weicheng Xin · (+86) 177 7119 5591 · 418794028@qq.com<br>
-    Central South University of Forestry and Technology · BSc Finance · Class of 2027
-  </div>
-</footer>
+  <!-- ============ Deliverables ============ -->
+  <section id="documents" class="band">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-kicker">Deliverables</div>
+        <h2>What I wrote, shipped and can open on request</h2>
+        <p>Everything below exists as a real artefact. Ask about any of them in an interview and I will walk through it.</p>
+      </div>
+      <div class="docs">
+        <div class="doc reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+          <div><b>Front- and back-end requirements</b><span>Approval flows, base data, entities, documents, accounting vouchers, permissions, coding rules</span></div>
+        </div>
+        <div class="doc reveal d1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+          <div><b>End-to-end process and information-flow maps</b><span>Module flows, hierarchy and the path data takes between systems</span></div>
+        </div>
+        <div class="doc reveal d2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+          <div><b>Product solution, phasing plan and kick-off documents</b><span>Three-phase roadmap, scope boundaries and collaboration mechanics</span></div>
+        </div>
+        <div class="doc reveal d3">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <div><b>Market insight assistant · PRD and operating model</b><span>Product definition, the nine-step pipeline, and the full test and launch plan</span></div>
+        </div>
+        <div class="doc reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <div><b>Master-data cleanup requirements</b><span>Data requirements and the finance-side boundary for the migration</span></div>
+        </div>
+        <div class="doc reveal d1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+          <div><b>9 AI knowledge-base guides and 5 rollout training cases</b><span>Written for finance users, not for engineers</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ============ Contact ============ -->
+  <section id="contact" class="contact">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="wrap">
+      <h2 class="reveal">If you only remember one line: I turn business problems into systems that go live, and hand the repetitive work to AI.</h2>
+      <p class="lead reveal d1">
+        Available for digital product manager roles from the 2027 graduate season, in Chinese or English.
+      </p>
+      <div class="contact-grid reveal d2">
+        <div><span>Phone</span><b>(+86) 177 7119 5591</b></div>
+        <div><span>Email</span><b><a href="mailto:418794028@qq.com">418794028@qq.com</a></b></div>
+        <div><span>Portfolio PDF</span><b><a href="portfolio/Xin-Weicheng-Portfolio.pdf">15 pages, in Chinese</a></b></div>
+        <div><span>Live prototype</span><b><a href="prototype/index.html" target="_blank" rel="noopener">Market insight assistant</a></b></div>
+      </div>
+      <div class="foot">
+        <span>© 2026 Weicheng Xin · Digital Product Manager</span>
+        <span>All data anonymised: internal links and system addresses removed, colleagues shown as role names, internal codes replaced with demo values.</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  document.documentElement.classList.add("js");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* 导航栏滚动态 + 顶部进度条 */
+  var nav = document.getElementById("nav");
+  var progress = document.getElementById("progress");
+
+  function onScroll() {
+    var y = window.scrollY || document.documentElement.scrollTop;
+    if (nav) nav.classList.toggle("solid", y > 24);
+    if (progress) {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (max > 0 ? (y / max) * 100 : 0) + "%";
+    }
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* 进场动效 */
+  var revealItems = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+  if (reduce || !("IntersectionObserver" in window)) {
+    revealItems.forEach(function (el) { el.classList.add("in"); });
+  } else {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    revealItems.forEach(function (el) { observer.observe(el); });
+  }
+
+  /* 首屏数字滚动 */
+  var counters = Array.prototype.slice.call(document.querySelectorAll("[data-count]"));
+  function runCounter(el) {
+    var target = parseFloat(el.getAttribute("data-count")) || 0;
+    var prefix = el.getAttribute("data-prefix") || "";
+    var suffix = el.getAttribute("data-suffix") || "";
+    if (reduce) { el.textContent = prefix + target + suffix; return; }
+    var start = null;
+    var duration = 1100;
+    function tick(ts) {
+      if (start === null) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = prefix + Math.round(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  if (!("IntersectionObserver" in window)) {
+    counters.forEach(runCounter);
+  } else {
+    var counterObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          runCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (el) { counterObserver.observe(el); });
+  }
+
+  /* 卡片轻微跟随鼠标的浮起效果（桌面端） */
+  if (!reduce && window.matchMedia("(hover: hover)").matches) {
+    document.querySelectorAll(".project").forEach(function (card) {
+      card.addEventListener("mousemove", function (event) {
+        var rect = card.getBoundingClientRect();
+        var dx = (event.clientX - rect.left) / rect.width - 0.5;
+        var dy = (event.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform =
+          "translateY(-4px) rotateX(" + (-dy * 1.6).toFixed(2) + "deg) rotateY(" +
+          (dx * 1.6).toFixed(2) + "deg)";
+      });
+      card.addEventListener("mouseleave", function () { card.style.transform = ""; });
+    });
+  }
+})();
+</script>
 </body>
 </html>
