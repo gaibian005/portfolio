@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Weicheng Xin · Digital Product Manager Portfolio</title>
-<meta name="description" content="Portfolio of Weicheng Xin, a digital product manager: finance digitalisation, an expense control system that shipped, master-data engineering, and hands-on AI delivery.">
+<meta name="description" content="Portfolio of Weicheng Xin, a digital product manager: finance digitalisation, an expense control system that shipped, master-data engineering, and hands-on AI delivery. Bilingual, English and Chinese.">
 <meta name="theme-color" content="#0B1B2E">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230F2B46'/><text x='50' y='68' font-size='56' font-family='Helvetica' font-weight='bold' fill='%23fff' text-anchor='middle'>W</text></svg>">
 <style>
@@ -32,7 +32,6 @@
   }
 
   * { box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -49,30 +48,35 @@
   a { color: inherit; text-decoration: none; }
   h1, h2, h3, h4 { margin: 0; line-height: 1.25; letter-spacing: -0.01em; font-weight: 700; }
   p { margin: 0; }
-
   .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* 语言切换：非当前语言的节点隐藏 */
+  html[data-lang="en"] [data-zh],
+  html[data-lang="zh"] [data-en] { display: none !important; }
+
+  /* 中文模式下的排版微调 */
+  html[data-lang="zh"] .hero h1 { font-size: clamp(34px, 5.4vw, 60px); letter-spacing: -.02em; }
+  html[data-lang="zh"] .hero-sub,
+  html[data-lang="zh"] .sec-head p { font-size: 16px; }
 
   /* ---------------- 顶部导航 ---------------- */
   .nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    transition: background .35s ease, box-shadow .35s ease, backdrop-filter .35s ease;
+    transition: background .35s ease, box-shadow .35s ease;
   }
   .nav.solid {
-    background: rgba(255, 255, 255, .82);
+    background: rgba(255, 255, 255, .84);
     backdrop-filter: saturate(180%) blur(14px);
     box-shadow: 0 1px 0 rgba(15, 43, 70, .07);
   }
-  .nav-inner {
-    display: flex; align-items: center; justify-content: space-between;
-    height: 64px;
-  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
   .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -.01em; }
   .brand-mark {
     width: 30px; height: 30px; border-radius: 9px; flex: 0 0 auto;
     background: linear-gradient(140deg, var(--navy-2), var(--blue));
     color: #fff; display: grid; place-items: center; font-size: 14px; font-weight: 700;
   }
-  .nav-links { display: flex; align-items: center; gap: 26px; font-size: 14px; color: var(--gray); }
+  .nav-links { display: flex; align-items: center; gap: 24px; font-size: 14px; color: var(--gray); }
   .nav-links a { position: relative; padding: 4px 0; transition: color .2s ease; }
   .nav-links a::after {
     content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 0;
@@ -80,9 +84,33 @@
   }
   .nav-links a:hover { color: var(--navy); }
   .nav-links a:hover::after { width: 100%; }
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+
+  /* ---------------- 语言切换按钮 ---------------- */
+  .lang-switch {
+    position: relative; display: inline-flex; align-items: center;
+    background: #fff; border: 1px solid var(--line); border-radius: 999px;
+    padding: 3px; cursor: pointer; user-select: none; font-family: inherit;
+    transition: border-color .22s ease, box-shadow .22s ease;
+  }
+  .lang-switch:hover { border-color: #C9D6E6; box-shadow: var(--shadow-s); }
+  .lang-switch .slide {
+    position: absolute; top: 3px; left: 3px; height: calc(100% - 6px); width: 42px;
+    background: var(--navy-2); border-radius: 999px;
+    transition: transform .32s cubic-bezier(.4, 0, .2, 1);
+  }
+  html[data-lang="zh"] .lang-switch .slide { transform: translateX(42px); }
+  .lang-switch .opt {
+    position: relative; z-index: 1; width: 42px; text-align: center;
+    font-size: 12.5px; font-weight: 700; letter-spacing: .04em; color: var(--gray);
+    padding: 5px 0; transition: color .28s ease;
+  }
+  html[data-lang="en"] .lang-switch .opt[data-for="en"],
+  html[data-lang="zh"] .lang-switch .opt[data-for="zh"] { color: #fff; }
+
   .nav-cta {
     font-size: 13.5px; font-weight: 600; padding: 8px 16px; border-radius: 999px;
-    border: 1px solid var(--line); color: var(--navy); background: #fff;
+    border: 1px solid var(--line); color: var(--navy); background: #fff; white-space: nowrap;
     transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
   }
   .nav-cta:hover { transform: translateY(-1px); box-shadow: var(--shadow-s); border-color: #C9D6E6; }
@@ -116,6 +144,7 @@
     color: var(--blue); background: #fff; border: 1px solid var(--line);
     padding: 7px 14px; border-radius: 999px; box-shadow: var(--shadow-s);
   }
+  html[data-lang="zh"] .eyebrow { letter-spacing: .04em; }
   .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--green); position: relative; }
   .pulse::after {
     content: ""; position: absolute; inset: -4px; border-radius: 50%;
@@ -132,9 +161,7 @@
     background: linear-gradient(100deg, var(--blue) 0%, #4F46E5 55%, var(--teal) 100%);
     -webkit-background-clip: text; background-clip: text; color: transparent;
   }
-  .hero-sub { margin-top: 22px; font-size: 17px; color: var(--gray); max-width: 660px; }
-  .hero-cn { margin-top: 14px; font-size: 15px; color: var(--gray-l); max-width: 660px; }
-
+  .hero-sub { margin-top: 22px; font-size: 17px; color: var(--gray); max-width: 680px; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
   .btn {
     display: inline-flex; align-items: center; gap: 9px;
@@ -154,7 +181,6 @@
     background: #fff; border: 1px solid var(--line); padding: 6px 13px; border-radius: 999px;
   }
 
-  /* ---------------- 数据条 ---------------- */
   .stats {
     display: grid; gap: 1px;
     grid-template-columns: repeat(4, 1fr);
@@ -173,14 +199,11 @@
   /* ---------------- 通用区块 ---------------- */
   section { padding: 96px 0; }
   .band { background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .sec-head { max-width: 720px; }
-  .sec-kicker {
-    font-size: 12.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--blue);
-  }
+  .sec-head { max-width: 740px; }
+  .sec-kicker { font-size: 12.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); }
   .sec-head h2 { margin-top: 12px; font-size: clamp(26px, 3.4vw, 38px); color: var(--navy); letter-spacing: -.028em; }
   .sec-head p { margin-top: 14px; color: var(--gray); font-size: 15.5px; }
 
-  /* ---------------- 层级图例 ---------------- */
   .legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
   .legend-item {
     display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;
@@ -208,13 +231,13 @@
   .project:hover { transform: translateY(-4px); box-shadow: var(--shadow-m); border-color: #D3DEEB; }
   .project:hover::before { transform: scaleY(1); }
   .project.core { background: linear-gradient(180deg, #FFFFFF 0%, #FBFCFE 100%); }
-
   .tier {
     display: inline-flex; align-items: center; gap: 7px;
     font-size: 11.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
     padding: 5px 11px; border-radius: 999px; color: var(--accent-text, var(--blue));
     background: var(--accent-soft, var(--blue-soft));
   }
+  html[data-lang="zh"] .tier { letter-spacing: .02em; }
   .project h3 { margin-top: 14px; font-size: 22px; color: var(--navy); letter-spacing: -.02em; }
   .project .role { margin-top: 9px; font-size: 14px; color: var(--gray); }
   .project ul { margin: 20px 0 0; padding: 0; list-style: none; display: grid; gap: 9px; }
@@ -224,9 +247,7 @@
     width: 6px; height: 6px; border-radius: 50%; background: var(--accent, var(--blue)); opacity: .55;
   }
   .metrics { display: grid; gap: 12px; align-content: start; }
-  .metric {
-    background: var(--bg); border-radius: 13px; padding: 15px 16px; border: 1px solid #EDF1F6;
-  }
+  .metric { background: var(--bg); border-radius: 13px; padding: 15px 16px; border: 1px solid #EDF1F6; }
   .metric b { display: block; font-size: 22px; color: var(--navy); letter-spacing: -.02em; line-height: 1.2; }
   .metric span { display: block; margin-top: 5px; font-size: 12.5px; color: var(--gray); }
 
@@ -247,7 +268,7 @@
   .tl-date { font-size: 12.5px; font-weight: 700; letter-spacing: .04em; color: var(--blue); }
   .tl-item.green .tl-date { color: var(--green); }
   .tl-title { margin-top: 5px; font-size: 16.5px; font-weight: 700; color: var(--navy); }
-  .tl-body { margin-top: 6px; font-size: 14px; color: var(--gray); max-width: 720px; }
+  .tl-body { margin-top: 6px; font-size: 14px; color: var(--gray); max-width: 760px; }
 
   /* ---------------- 能力网格 ---------------- */
   .grid-3 { display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); margin-top: 44px; }
@@ -283,15 +304,14 @@
   .doc span { display: block; margin-top: 4px; font-size: 13px; color: var(--gray); }
 
   /* ---------------- 联系 ---------------- */
-  .contact {
-    background: var(--navy); color: #fff; padding: 92px 0 56px; position: relative; overflow: hidden;
-  }
+  .contact { background: var(--navy); color: #fff; padding: 92px 0 56px; position: relative; overflow: hidden; }
   .contact .orb-1 { top: -180px; left: -80px; right: auto; opacity: .18;
                     background: radial-gradient(circle at 30% 30%, #4F7FD6, transparent 70%); }
   .contact .orb-2 { bottom: -200px; right: -60px; left: auto; opacity: .16;
                     background: radial-gradient(circle at 40% 40%, #2FA8A8, transparent 70%); }
-  .contact h2 { font-size: clamp(26px, 3.6vw, 40px); letter-spacing: -.03em; max-width: 640px; }
-  .contact .lead { margin-top: 16px; color: #A9BDD6; font-size: 15.5px; max-width: 620px; }
+  .contact h2 { font-size: clamp(24px, 3.4vw, 38px); letter-spacing: -.03em; max-width: 700px; }
+  html[data-lang="zh"] .contact h2 { font-size: clamp(22px, 3vw, 32px); letter-spacing: -.01em; }
+  .contact .lead { margin-top: 16px; color: #A9BDD6; font-size: 15.5px; max-width: 640px; }
   .contact-grid {
     margin-top: 42px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
     background: rgba(255, 255, 255, .13); border: 1px solid rgba(255, 255, 255, .13);
@@ -300,6 +320,7 @@
   .contact-grid div { background: rgba(255, 255, 255, .035); padding: 18px 20px; }
   .contact-grid span { display: block; font-size: 11.5px; letter-spacing: .08em;
                        text-transform: uppercase; color: #7E93AE; }
+  html[data-lang="zh"] .contact-grid span { letter-spacing: .03em; }
   .contact-grid b { display: block; margin-top: 7px; font-size: 14.5px; color: #fff; font-weight: 600; }
   .contact-grid a { border-bottom: 1px solid rgba(255, 255, 255, .28); }
   .contact-grid a:hover { border-color: #fff; }
@@ -309,18 +330,17 @@
     font-size: 12.5px; color: #7E93AE;
   }
 
-  /* ---------------- 进场动效 ---------------- */
+  /* ---------------- 动效 ---------------- */
   .js .reveal { opacity: 0; transform: translateY(26px); }
   .js .reveal.in {
     opacity: 1; transform: none;
     transition: opacity .7s cubic-bezier(.2, .8, .2, 1), transform .7s cubic-bezier(.2, .8, .2, 1);
   }
-  .reveal.d1.in { transition-delay: .08s; }
-  .reveal.d2.in { transition-delay: .16s; }
-  .reveal.d3.in { transition-delay: .24s; }
-  .reveal.d4.in { transition-delay: .32s; }
+  .js .reveal.d1.in { transition-delay: .08s; }
+  .js .reveal.d2.in { transition-delay: .16s; }
+  .js .reveal.d3.in { transition-delay: .24s; }
+  .js .reveal.d4.in { transition-delay: .32s; }
 
-  /* ---------------- 滚动进度 ---------------- */
   .progress {
     position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 120;
     background: linear-gradient(90deg, var(--blue), var(--teal));
@@ -335,8 +355,13 @@
     .stats { grid-template-columns: repeat(2, 1fr); }
     .contact-grid { grid-template-columns: repeat(2, 1fr); }
     .nav-links { display: none; }
-    .hero { padding: 132px 0 72px; }
+    .hero { padding: 132px 0 0; }
     section { padding: 72px 0; }
+  }
+  @media (max-width: 620px) {
+    .nav-cta { display: none; }
+    .stats { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -353,161 +378,289 @@
 
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
-    <div class="brand">
+    <a class="brand" href="#top">
       <span class="brand-mark">W</span>
       <span>Weicheng Xin</span>
-    </div>
+    </a>
     <nav class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#timeline">Timeline</a>
-      <a href="#skills">Skills</a>
-      <a href="#documents">Deliverables</a>
-      <a href="#contact">Contact</a>
+      <a href="#work"><span data-en>Work</span><span data-zh>作品</span></a>
+      <a href="#timeline"><span data-en>Timeline</span><span data-zh>经历</span></a>
+      <a href="#skills"><span data-en>Skills</span><span data-zh>能力</span></a>
+      <a href="#documents"><span data-en>Deliverables</span><span data-zh>交付物</span></a>
+      <a href="#contact"><span data-en>Contact</span><span data-zh>联系</span></a>
     </nav>
-    <a class="nav-cta" href="portfolio/Xin-Weicheng-Portfolio.pdf">Portfolio PDF</a>
+    <div class="nav-right">
+      <button class="lang-switch" id="langSwitch" type="button"
+              aria-label="Switch language between English and Chinese">
+        <span class="slide" aria-hidden="true"></span>
+        <span class="opt" data-for="en">EN</span>
+        <span class="opt" data-for="zh">中文</span>
+      </button>
+      <a class="nav-cta" href="portfolio/Xin-Weicheng-Portfolio.pdf">
+        <span data-en>Portfolio PDF</span><span data-zh>作品集 PDF</span>
+      </a>
+    </div>
   </div>
 </header>
 
-<main>
+<main id="top">
 
-  <!-- ============ Hero ============ -->
+  <!-- ============ 首屏 ============ -->
   <section class="hero">
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
     <div class="grid-lines"></div>
     <div class="wrap">
-      <span class="eyebrow reveal"><span class="pulse"></span>2027 Graduate · Digital Product Manager</span>
-      <h1 class="reveal d1">I turn finance operations into<br><span class="accent">systems that actually ship.</span></h1>
+      <span class="eyebrow reveal">
+        <span class="pulse"></span>
+        <span data-en>2027 Graduate · Digital Product Manager</span>
+        <span data-zh>2027 届毕业生 · 数字化产品经理</span>
+      </span>
+
+      <h1 class="reveal d1">
+        <span data-en>I turn finance operations into<br><span class="accent">systems that actually ship.</span></span>
+        <span data-zh>我把财务业务问题，<br><span class="accent">做成真的能上线的系统。</span></span>
+      </h1>
+
       <p class="hero-sub reveal d2">
-        Over three internships I moved from audit into product: defining the problem with the people who live
-        with it, writing the solution development can build, and removing the repetitive, error-prone work with
-        AI and scripts.
+        <span data-en>
+          Over three internships I moved from audit into product: defining the problem with the people who live
+          with it, writing the solution development can build, and removing the repetitive, error-prone work with
+          AI and scripts.
+        </span>
+        <span data-zh>
+          三段实习，我从审计走到产品：和真正用系统的人一起把问题定义清楚，写成研发能开工的方案，
+          再用 AI 和脚本把其中重复、易错的部分做掉。系统 2026 年 9 月 1 日正式上线。
+        </span>
       </p>
-      <p class="hero-cn reveal d2">
-        懂财务业务，也能用 AI 把流程做成能上线的系统——这是我在每个项目里反复验证的一件事。
-      </p>
+
       <div class="hero-actions reveal d3">
         <a class="btn btn-primary" href="portfolio/Xin-Weicheng-Portfolio.pdf">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-          Read the 15-page portfolio
+          <span data-en>Read the 15-page portfolio</span>
+          <span data-zh>查看 15 页作品集</span>
         </a>
         <a class="btn btn-ghost" href="prototype/index.html" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-          Open the live prototype
+          <span data-en>Open the live prototype</span>
+          <span data-zh>打开可交互原型</span>
         </a>
       </div>
+
       <div class="chips reveal d4">
-        <span class="chip">Finance &amp; audit background</span>
-        <span class="chip">End-to-end product delivery</span>
-        <span class="chip">Master data engineering</span>
-        <span class="chip">Hands-on AI implementation</span>
+        <span class="chip" data-en>Finance &amp; audit background</span>
+        <span class="chip" data-zh>财务与审计背景</span>
+        <span class="chip" data-en>End-to-end product delivery</span>
+        <span class="chip" data-zh>产品全流程交付</span>
+        <span class="chip" data-en>Master data engineering</span>
+        <span class="chip" data-zh>主数据治理</span>
+        <span class="chip" data-en>Hands-on AI implementation</span>
+        <span class="chip" data-zh>AI 落地实现</span>
       </div>
 
       <div class="stats reveal d4">
-        <div class="stat"><b data-count="85" data-suffix="%+">0</b><span>Invoice &amp; contract records loaded into the master-data hub</span></div>
-        <div class="stat"><b data-count="90" data-suffix="%+">0</b><span>Supplier records loaded into the master-data hub</span></div>
-        <div class="stat"><b data-count="80" data-suffix="%+">0</b><span>Dual-flow match rate across two independent evidence trails</span></div>
-        <div class="stat"><b data-count="9" data-prefix="Sep " data-suffix="">0</b><span>Expense control system went live — development 20 days early</span></div>
+        <div class="stat">
+          <b data-count="85" data-suffix="%+">0</b>
+          <span data-en>Invoice &amp; contract records loaded into the master-data hub</span>
+          <span data-zh>发票与合同信息进入主数据中心</span>
+        </div>
+        <div class="stat">
+          <b data-count="90" data-suffix="%+">0</b>
+          <span data-en>Supplier records loaded into the master-data hub</span>
+          <span data-zh>供应商信息进入主数据中心</span>
+        </div>
+        <div class="stat">
+          <b data-count="80" data-suffix="%+">0</b>
+          <span data-en>Dual-flow match rate across two independent evidence trails</span>
+          <span data-zh>双流程勾稽率（两套独立线索互相印证）</span>
+        </div>
+        <div class="stat">
+          <b data-count="20" data-prefix="-" data-suffix=" days" data-suffix-zh=" 天">0</b>
+          <span data-en>Development finished ahead of plan; the system went live on 1 Sep 2026</span>
+          <span data-zh>开发提前完成，系统 2026 年 9 月 1 日上线</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ Work ============ -->
+  <!-- ============ 作品 ============ -->
   <section id="work">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="sec-kicker">Selected work</div>
-        <h2>Four pieces, three tiers</h2>
+        <div class="sec-kicker"><span data-en>Selected work</span><span data-zh>作品</span></div>
+        <h2><span data-en>Four pieces, three tiers</span><span data-zh>四件作品，三个层级</span></h2>
         <p>
-          One core case carries the product claim. Two supporting cases prove the method and the trust design.
-          One backing study shows how I read rules that are still being written.
+          <span data-en>
+            One core case carries the product claim. Two supporting cases prove the method and the trust design.
+            One backing study shows how I read rules that are still being written.
+          </span>
+          <span data-zh>
+            主案例负责证明产品能力；支撑案例证明方法与可信设计；背景背书证明我对规则变化的判断。
+            层级越靠前，越能说明我能不能真的把事做成。
+          </span>
         </p>
       </div>
       <div class="legend reveal d1">
-        <span class="legend-item"><span class="dot dot-core"></span>Core case</span>
-        <span class="legend-item"><span class="dot dot-support"></span>Supporting case</span>
-        <span class="legend-item"><span class="dot dot-backer"></span>Backing study</span>
+        <span class="legend-item"><span class="dot dot-core"></span><span data-en>Core case</span><span data-zh>主案例</span></span>
+        <span class="legend-item"><span class="dot dot-support"></span><span data-en>Supporting case</span><span data-zh>支撑案例</span></span>
+        <span class="legend-item"><span class="dot dot-backer"></span><span data-en>Backing study</span><span data-zh>背景背书</span></span>
       </div>
 
       <div class="projects">
 
         <article class="project core reveal" style="--accent: #2563EB; --accent-soft: #EAF1FE; --accent-text: #1B4FD8;">
           <div>
-            <span class="tier">★ Core case</span>
-            <h3>Overseas expense control system</h3>
-            <div class="role">COROS Sports Technology · Finance digitalisation · May–Sep 2026 · Second product manager</div>
+            <span class="tier"><span data-en>★ Core case</span><span data-zh>★ 主案例</span></span>
+            <h3><span data-en>Overseas expense control system</span><span data-zh>海外费用控制系统</span></h3>
+            <div class="role">
+              <span data-en>COROS Sports Technology · Finance digitalisation · May–Sep 2026 · Second product manager</span>
+              <span data-zh>高驰 COROS · 财务部 · 2026.05–09 · 二号产品经理</span>
+            </div>
             <ul>
-              <li>Wrote the phase-one requirements and the product solution: nine modules covering suppliers, contracts, invoices, payment write-offs, accounting vouchers, permissions and coding rules.</li>
-              <li>Designed three independent approval flows and the boundaries to four external systems — master data hub, SAP, Feishu and Docusign.</li>
-              <li>Led the cleanup of more than ten thousand legacy documents into master data the system could go live on.</li>
-              <li>Went live on 1 September 2026; development finished 20 days ahead of plan.</li>
+              <li><span data-en>Wrote the phase-one requirements and the product solution: nine modules covering suppliers, contracts, invoices, payment write-offs, accounting vouchers, permissions and coding rules.</span>
+                  <span data-zh>负责一期需求与产品方案：九个模块覆盖供应商、合同、发票、付款核销、核算凭证、权限与编码规则。</span></li>
+              <li><span data-en>Designed three independent approval flows and the boundaries to four external systems — master data hub, SAP, Feishu and Docusign.</span>
+                  <span data-zh>设计三条独立审批流，并划清与四个外部系统的边界：主数据中心、SAP、飞书与 Docusign。</span></li>
+              <li><span data-en>Led the cleanup of more than ten thousand legacy documents into master data the system could go live on.</span>
+                  <span data-zh>主导上万份旧单据的清洗与重构，做成系统可以上线使用的主数据。</span></li>
+              <li><span data-en>Went live on 1 September 2026; development finished 20 days ahead of plan.</span>
+                  <span data-zh>2026 年 9 月 1 日正式上线；开发完成比计划提前 20 天。</span></li>
             </ul>
           </div>
           <div class="metrics">
-            <div class="metric"><b>1 Sep 2026</b><span>System went live — I stayed through launch day</span></div>
-            <div class="metric"><b>9 modules</b><span>Requirements written and designed end to end</span></div>
-            <div class="metric"><b>−20 days</b><span>Development completed ahead of the plan</span></div>
-            <div class="metric"><b>Confirmed offer</b><span>Full-time return offer at the end of the internship</span></div>
+            <div class="metric">
+              <b>2026.09.01</b>
+              <span data-en>System went live</span>
+              <span data-zh>系统正式上线</span>
+            </div>
+            <div class="metric">
+              <b><span data-en>9 modules</span><span data-zh>9 个模块</span></b>
+              <span data-en>Requirements and solution designed end to end</span>
+              <span data-zh>需求与方案端到端设计</span>
+            </div>
+            <div class="metric">
+              <b><span data-en>−20 days</span><span data-zh>提前 20 天</span></b>
+              <span data-en>Development completed ahead of plan</span>
+              <span data-zh>开发完成早于计划</span>
+            </div>
+            <div class="metric">
+              <b><span data-en>1–2 months</span><span data-zh>1–2 个月</span></b>
+              <span data-en>Manual finance workload saved by the cleanup</span>
+              <span data-zh>清洗工作直接减少的财务工作量</span>
+            </div>
           </div>
         </article>
 
         <article class="project reveal d1" style="--accent: #0F8A8A; --accent-soft: #E3F4F4; --accent-text: #0B6E6E;">
           <div>
-            <span class="tier">◆ Supporting case</span>
-            <h3>Document master-data extraction &amp; cleanup</h3>
-            <div class="role">Data owner · 2026 · Tens of thousands of files, two disconnected workflows</div>
+            <span class="tier"><span data-en>◆ Supporting case</span><span data-zh>◆ 支撑案例</span></span>
+            <h3>
+              <span data-en>Document master-data extraction &amp; cleanup</span>
+              <span data-zh>单据主数据清洗与重构</span>
+            </h3>
+            <div class="role">
+              <span data-en>Data owner · 2026 · Tens of thousands of files, two disconnected workflows</span>
+              <span data-zh>数据负责人 · 2026 · 上万份文件 · 两条互不相连的流程</span>
+            </div>
             <ul>
-              <li>Split the cleanup into 11 layered parallel sections to cut database write contention and model drift.</li>
-              <li>Text-layer extraction first, OCR fallback for scans, multimodal parsing for hard layouts — all mapped into SQLite as JSON.</li>
-              <li>Matched records through two independent trails: file fingerprint (MD5, size, text) versus the document-to-SAP path.</li>
-              <li>Low-confidence and conflicting records go to a separate human queue with a recorded reason — never a silent failure.</li>
+              <li><span data-en>Split the cleanup into 11 layered parallel sections to cut database write contention and model drift.</span>
+                  <span data-zh>把清洗拆成 11 个分层并行小节，降低数据库写入冲突与模型注意力发散。</span></li>
+              <li><span data-en>Text-layer extraction first, OCR fallback for scans, multimodal parsing for hard layouts — all mapped into SQLite as JSON.</span>
+                  <span data-zh>文字层提取优先、扫描件 OCR 兜底、复杂排版用多模态，统一输出 JSON 映射进数据库。</span></li>
+              <li><span data-en>Matched records through two independent trails: file fingerprint (MD5, size, text) versus the document-to-SAP path.</span>
+                  <span data-zh>两套独立线索勾稽：文件指纹（哈希、大小、文本）对比单据到 SAP 的链路。</span></li>
+              <li><span data-en>Low-confidence and conflicting records go to a separate human queue with a recorded reason — never a silent failure.</span>
+                  <span data-zh>失败与低置信记录进入独立待处理队列并记录原因，绝不静默失败。</span></li>
             </ul>
           </div>
           <div class="metrics">
-            <div class="metric"><b>85%+</b><span>Invoice and contract records into the master-data hub</span></div>
-            <div class="metric"><b>90%+</b><span>Supplier records into the master-data hub</span></div>
-            <div class="metric"><b>70%+</b><span>In-transit contracts, drawdowns and exceptions</span></div>
-            <div class="metric"><b>1–2 months</b><span>Manual finance workload saved</span></div>
+            <div class="metric"><b>85%+</b>
+              <span data-en>Invoice and contract records into the master-data hub</span>
+              <span data-zh>发票与合同信息进入主数据中心</span></div>
+            <div class="metric"><b>90%+</b>
+              <span data-en>Supplier records into the master-data hub</span>
+              <span data-zh>供应商信息进入主数据中心</span></div>
+            <div class="metric"><b>70%+</b>
+              <span data-en>In-transit contracts, drawdowns and exceptions</span>
+              <span data-zh>在途合同、提款单核销记录及异常项</span></div>
+            <div class="metric"><b>80%+</b>
+              <span data-en>Dual-flow match rate</span>
+              <span data-zh>双流程勾稽率</span></div>
           </div>
         </article>
 
         <article class="project reveal d2" style="--accent: #1B8F6B; --accent-soft: #E9F3EE; --accent-text: #12694F;">
           <div>
-            <span class="tier">◆ Supporting case</span>
-            <h3>Market insight assistant · product design without a reference</h3>
-            <div class="role">Tencent AI Bootcamp · Product manager · Aug–Sep 2026</div>
+            <span class="tier"><span data-en>◆ Supporting case</span><span data-zh>◆ 支撑案例</span></span>
+            <h3>
+              <span data-en>Market insight assistant · product design without a reference</span>
+              <span data-zh>行情翻译官与异动侦探 · 没有标准答案时怎么定义产品</span>
+            </h3>
+            <div class="role">
+              <span data-en>Tencent AI Bootcamp · Product manager · Aug–Sep 2026</span>
+              <span data-zh>腾讯 AI 训练营 · 产品经理 · 2026.08–09</span>
+            </div>
             <ul>
-              <li>Defined a conversational assistant for non-expert investors: plain-language briefings plus 24/7 anomaly detection on watchlist instruments.</li>
-              <li>Designed a nine-step pipeline from data collection to behaviour feedback, with RAG evidence and a compliance check before anything reaches the user.</li>
-              <li>Built the trust model: three output states (evidence / weak evidence / unknown), every conclusion backed by a drill-down evidence chain.</li>
-              <li>Set the launch bar myself: L1–L4 grading, four red lines, and a rollback switch that must be rehearsed before launch.</li>
+              <li><span data-en>Defined a conversational assistant for non-expert investors: plain-language briefings plus 24/7 anomaly detection on watchlist instruments.</span>
+                  <span data-zh>面向没有金融背景的普通投资者：白话解读，加上对自选标的的量价、资金与舆情异动监测。</span></li>
+              <li><span data-en>Designed a nine-step pipeline from data collection to behaviour feedback, with RAG evidence and a compliance check before anything reaches the user.</span>
+                  <span data-zh>设计九步运转链路：数据采集到行为回流，中间经 RAG 取证与合规校验后才触达用户。</span></li>
+              <li><span data-en>Built the trust model: three output states (evidence / weak evidence / unknown), every conclusion backed by a drill-down evidence chain.</span>
+                  <span data-zh>把「可信」做成机制：有据 / 弱据 / 存疑三种输出态，每条结论都有可下钻的证据链。</span></li>
+              <li><span data-en>Set the launch bar myself: L1–L4 grading, four red lines, and a rollback switch that must be rehearsed before launch.</span>
+                  <span data-zh>自己定义上线门槛：L1–L4 定级、四条红线，回滚开关必须演练通过才允许上线。</span></li>
             </ul>
           </div>
           <div class="metrics">
-            <div class="metric"><b>L3 / L4</b><span>Staged rollout at L3; full launch at L4 with complaints ≤ 4%</span></div>
-            <div class="metric"><b>4 red lines</b><span>Any hit means no-go — including a failed "unknown" state</span></div>
-            <div class="metric"><b>9 steps</b><span>From data collection to behaviour feedback</span></div>
-            <div class="metric"><b>Live</b><span>Clickable high-fidelity prototype, open to anyone</span></div>
+            <div class="metric"><b>L3 / L4</b>
+              <span data-en>Staged rollout at L3; full launch at L4 with complaints ≤ 4%</span>
+              <span data-zh>达 L3 可灰度；灰度稳定达 L4 且投诉率 ≤4% 可全量</span></div>
+            <div class="metric"><b><span data-en>4 red lines</span><span data-zh>4 条红线</span></b>
+              <span data-en>Any hit means no-go — including a failed "unknown" state</span>
+              <span data-zh>任一命中即不上线，含「存疑机制失效」</span></div>
+            <div class="metric"><b><span data-en>9 steps</span><span data-zh>9 步链路</span></b>
+              <span data-en>From data collection to behaviour feedback</span>
+              <span data-zh>从数据采集到行为回流</span></div>
+            <div class="metric"><b><span data-en>Live</span><span data-zh>已上线</span></b>
+              <span data-en>Clickable high-fidelity prototype, open to anyone</span>
+              <span data-zh>可交互高保真原型，任何人可打开</span></div>
           </div>
         </article>
 
         <article class="project reveal d3" style="--accent: #6D5BD0; --accent-soft: #EDEAFB; --accent-text: #574AB0;">
           <div>
-            <span class="tier">○ Backing study</span>
-            <h3>EU product-access compliance study</h3>
-            <div class="role">KPMG briefing on EU market access · research and company-view analysis</div>
+            <span class="tier"><span data-en>○ Backing study</span><span data-zh>○ 背景背书</span></span>
+            <h3>
+              <span data-en>EU product-access compliance study</span>
+              <span data-zh>欧盟产品准入合规研究</span>
+            </h3>
+            <div class="role">
+              <span data-en>KPMG briefing on EU market access · research and company-view analysis</span>
+              <span data-zh>毕马威欧盟产品准入会议纪要 · 研究与公司视角分析</span>
+            </div>
             <ul>
-              <li>Worked through three regimes — IAA, CBAM and the Deforestation Regulation — and their timelines.</li>
-              <li>Judged the trajectory: short term ambiguous and case-driven, mid term social and governance, long term hard environmental requirements.</li>
-              <li>Concluded that compliance has no absolute yes or no: it needs structured data and a confidence judgement, which means systems deserve deliberate redundancy.</li>
+              <li><span data-en>Worked through three regimes — IAA, CBAM and the Deforestation Regulation — and their timelines.</span>
+                  <span data-zh>梳理三部主要法案及其时间节点：工业加速法案 IAA、碳边境调节机制 CBAM、零毁林监管法案 DR。</span></li>
+              <li><span data-en>Judged the trajectory: short term ambiguous and case-driven, mid term social and governance, long term hard environmental requirements.</span>
+                  <span data-zh>判断趋势：短期规则模糊依赖判例，中期集中在社会与治理层面，长期增加环境硬性要求。</span></li>
+              <li><span data-en>Concluded that compliance has no absolute yes or no: it needs structured data and a confidence judgement, which means systems deserve deliberate redundancy.</span>
+                  <span data-zh>结论：合规没有绝对的是与否，要靠结构化数据与置信度判断概率——系统建设需要预留设计冗余。</span></li>
             </ul>
           </div>
           <div class="metrics">
-            <div class="metric"><b>3 regimes</b><span>IAA · CBAM · Deforestation Regulation</span></div>
-            <div class="metric"><b>190+ lines</b><span>Tariff lines and quotas proposed under CBAM</span></div>
-            <div class="metric"><b>2027.09.30</b><span>First quota declaration deadline for importers</span></div>
-            <div class="metric"><b>Design redundancy</b><span>What it changed in how I scope systems</span></div>
+            <div class="metric"><b><span data-en>3 regimes</span><span data-zh>3 部法案</span></b>
+              <span data-en>IAA · CBAM · Deforestation Regulation</span>
+              <span data-zh>IAA · CBAM · 零毁林监管法案</span></div>
+            <div class="metric"><b>190+</b>
+              <span data-en>Tariff lines and quotas proposed under CBAM</span>
+              <span data-zh>CBAM 拟新增的关税税目与配额</span></div>
+            <div class="metric"><b>2027.09.30</b>
+              <span data-en>First quota declaration deadline for importers</span>
+              <span data-zh>进口商首次配额年度申报截止</span></div>
+            <div class="metric"><b><span data-en>Design redundancy</span><span data-zh>设计冗余</span></b>
+              <span data-en>What it changed in how I scope systems</span>
+              <span data-zh>它改变了我设计系统时的习惯</span></div>
           </div>
         </article>
 
@@ -515,138 +668,242 @@
     </div>
   </section>
 
-  <!-- ============ Timeline ============ -->
+  <!-- ============ 时间线 ============ -->
   <section id="timeline" class="band">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="sec-kicker">Timeline</div>
-        <h2>From audit, to AI operations, to shipping a system</h2>
-        <p>Three internships that build on each other rather than sitting side by side.</p>
+        <div class="sec-kicker"><span data-en>Timeline</span><span data-zh>经历</span></div>
+        <h2>
+          <span data-en>From audit, to AI operations, to shipping a system</span>
+          <span data-zh>从审计，到 AI 运营，到做出一个真正上线的系统</span>
+        </h2>
+        <p>
+          <span data-en>Three internships that build on each other rather than sitting side by side.</span>
+          <span data-zh>三段实习是递进关系，不是并列的三行履历。</span>
+        </p>
       </div>
       <div class="timeline">
         <div class="tl-item green reveal">
           <div class="tl-date">MAY – SEP 2026</div>
-          <div class="tl-title">COROS · Finance digitalisation</div>
+          <div class="tl-title"><span data-en>COROS · Finance digitalisation</span><span data-zh>高驰 COROS · 财务数字化</span></div>
           <div class="tl-body">
-            Second product manager on the overseas expense control system, from kick-off on 6 July through launch on
-            1 September. Requirements completed end of May, solution fixed in early June, development done 25 August
-            (20 days ahead of plan), acceptance 26–27 August, UAT 27–31 August, live 1 September. I ended the
-            internship on launch day with a full-time offer, to return to university and focus on the graduate season.
+            <span data-en>
+              Second product manager on the overseas expense control system, from kick-off to launch: requirements
+              completed end of May, solution fixed in early June, development done 25 August — 20 days ahead of plan
+              — acceptance 26–27 August, UAT 27–31 August, live 1 September.
+            </span>
+            <span data-zh>
+              海外费控系统二号产品经理，从启动会跟到系统上线：需求调研 5 月底完成、产品方案 6 月初定稿、
+              开发 8 月 25 日完成（比计划提前 20 天）、产品验收 8 月 26–27 日、UAT 8 月 27–31 日、9 月 1 日正式上线。
+            </span>
           </div>
         </div>
         <div class="tl-item reveal d1">
           <div class="tl-date">NOV 2025 – JAN 2026</div>
-          <div class="tl-title">Dewu · AI operations</div>
+          <div class="tl-title"><span data-en>Dewu · AI operations</span><span data-zh>上海得物 · AI 运营</span></div>
           <div class="tl-body">
-            Tracked LLM, agent and tooling market movement and development routes; published weekly and monthly
-            reports; supported agile delivery and rollout for AI products and automation tools.
+            <span data-en>
+              Tracked LLM, agent and tooling market movement and development routes; published weekly and monthly
+              reports; supported agile delivery and rollout for AI products and automation tools.
+            </span>
+            <span data-zh>
+              跟踪大模型、Agent 与配套工具的市场动态和开发路线，输出周报与月报；支撑 AI 产品与自动化工具的敏捷开发与推广。
+            </span>
           </div>
         </div>
         <div class="tl-item reveal d2">
           <div class="tl-date">JUN – SEP 2025</div>
-          <div class="tl-title">Tianzhi International CPA · FMCG IPO audit</div>
+          <div class="tl-title"><span data-en>Tianzhi International CPA · FMCG IPO audit</span><span data-zh>天职国际会计师事务所 · 快消 IPO 审计</span></div>
           <div class="tl-body">
-            Prepared AR/AP working papers and ran full walkthrough tests from document to statement. In due
-            diligence I standardised finance data and flagged two control gaps: rebate expenses with no automated
-            validation, and related-party flows tagged by hand.
+            <span data-en>
+              Prepared AR/AP working papers and ran full walkthrough tests from document to statement. In due
+              diligence I standardised finance data and flagged two control gaps: rebate expenses with no automated
+              validation, and related-party flows tagged by hand.
+            </span>
+            <span data-zh>
+              编制应收应付科目底稿，做「单据 → 业务 → 原始凭证 → 记账凭证 → 明细账 → 总账 → 报表」的完整穿行测试；
+              在尽调中标准化财务数据，并识别出返利缺少自动校验、关联方资金往来靠人工标记两处内控问题。
+            </span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ Skills ============ -->
+  <!-- ============ 能力 ============ -->
   <section id="skills">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="sec-kicker">How I work</div>
-        <h2>Product work and AI work, in the same loop</h2>
-        <p>Product defines the problem and the acceptance bar; AI and scripts remove the repetitive part in between.</p>
+        <div class="sec-kicker"><span data-en>How I work</span><span data-zh>工作方式</span></div>
+        <h2>
+          <span data-en>Product work and AI work, in the same loop</span>
+          <span data-zh>产品与 AI，在同一条链路里</span>
+        </h2>
+        <p>
+          <span data-en>Product defines the problem and the acceptance bar; AI and scripts remove the repetitive part in between.</span>
+          <span data-zh>产品负责把问题和验收标准定义清楚，AI 与脚本负责把中间重复的部分做掉。</span>
+        </p>
       </div>
       <div class="grid-3">
         <div class="card reveal">
           <div class="ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
           </div>
-          <h4>Product: six steps, each with an artefact</h4>
-          <p>Every step produces something the next person can use — no step ends in a conversation only.</p>
-          <div class="flow"><span>Interviews</span><span>Scope</span><span>Process</span><span>Requirements</span><span>Dev hand-off</span><span>Acceptance</span></div>
+          <h4><span data-en>Product: six steps, each with an artefact</span><span data-zh>产品：六步闭环，每步都有交付物</span></h4>
+          <p>
+            <span data-en>Every step produces something the next person can use — no step ends in a conversation only.</span>
+            <span data-zh>每一步都留下别人能接着用的东西，不把工作停在口头沟通上。</span>
+          </p>
+          <div class="flow">
+            <span data-en>Interviews</span><span data-zh>业务访谈</span>
+            <span data-en>Scope</span><span data-zh>界定边界</span>
+            <span data-en>Process</span><span data-zh>流程与信息流</span>
+            <span data-en>Requirements</span><span data-zh>需求与方案</span>
+            <span data-en>Dev hand-off</span><span data-zh>开发对接</span>
+            <span data-en>Acceptance</span><span data-zh>验收与上线</span>
+          </div>
         </div>
         <div class="card reveal d1">
           <div class="ico" style="background: var(--teal-soft); color: var(--teal);">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
           </div>
-          <h4>Data: two trails before anything is trusted</h4>
-          <p>File fingerprint against system path. Two independent trails must agree, or the record goes to a human.</p>
-          <div class="flow"><span>Extraction</span><span>OCR</span><span>11 parallel sections</span><span>Cross-check</span><span>JSON + Excel</span></div>
+          <h4><span data-en>Data: two trails before anything is trusted</span><span data-zh>数据：两套线索互相印证才落库</span></h4>
+          <p>
+            <span data-en>File fingerprint against system path. Two independent trails must agree, or the record goes to a human.</span>
+            <span data-zh>文件指纹对比系统链路，两条独立线索一致才写入，否则交回人工。</span>
+          </p>
+          <div class="flow">
+            <span data-en>Extraction</span><span data-zh>文本提取</span>
+            <span data-en>OCR</span><span data-zh>OCR 兜底</span>
+            <span data-en>11 parallel sections</span><span data-zh>11 个分层小节</span>
+            <span data-en>Cross-check</span><span data-zh>交叉勾稽</span>
+            <span data-en>JSON + Excel</span><span data-zh>JSON + Excel</span>
+          </div>
         </div>
         <div class="card reveal d2">
           <div class="ico" style="background: var(--green-soft); color: var(--green);">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
           </div>
-          <h4>AI: an agent is more than a model</h4>
-          <p>Model, tools, permissions, state, execution loop and acceptance rules. The last two decide whether it can run in production.</p>
-          <div class="flow"><span>Codex</span><span>Gemini</span><span>Agent workflows</span><span>Prompt engineering</span><span>Acceptance rules</span></div>
+          <h4><span data-en>AI: an agent is more than a model</span><span data-zh>AI：Agent 不只是模型</span></h4>
+          <p>
+            <span data-en>Model, tools, permissions, state, execution loop and acceptance rules. The last two decide whether it can run in production.</span>
+            <span data-zh>Agent = 模型 + 工具 + 权限 + 状态 + 执行循环 + 验收规则；后两项决定它能不能上生产。</span>
+          </p>
+          <div class="flow">
+            <span>Codex</span><span>Gemini</span>
+            <span data-en>Agent workflows</span><span data-zh>Agent 工作流</span>
+            <span data-en>Prompt engineering</span><span data-zh>提示词工程</span>
+            <span data-en>Acceptance rules</span><span data-zh>验收规则</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ Deliverables ============ -->
+  <!-- ============ 交付物 ============ -->
   <section id="documents" class="band">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="sec-kicker">Deliverables</div>
-        <h2>What I wrote, shipped and can open on request</h2>
-        <p>Everything below exists as a real artefact. Ask about any of them in an interview and I will walk through it.</p>
+        <div class="sec-kicker"><span data-en>Deliverables</span><span data-zh>交付物</span></div>
+        <h2>
+          <span data-en>What I wrote, shipped and can open on request</span>
+          <span data-zh>我写过、交付过、可以随时展开给你看的东西</span>
+        </h2>
+        <p>
+          <span data-en>Everything below exists as a real artefact. Ask about any of them in an interview and I will walk through it.</span>
+          <span data-zh>下面每一项都是真实存在的文档与系统，面试时可以按需展开任意一项。</span>
+        </p>
       </div>
       <div class="docs">
         <div class="doc reveal">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-          <div><b>Front- and back-end requirements</b><span>Approval flows, base data, entities, documents, accounting vouchers, permissions, coding rules</span></div>
+          <div>
+            <b><span data-en>Front- and back-end requirements</span><span data-zh>新系统前后端需求文档</span></b>
+            <span data-en>Approval flows, base data, entities, documents, accounting vouchers, permissions, coding rules</span>
+            <span data-zh>审批流、基础数据、实体、单据、核算凭证、权限与编码规则</span>
+          </div>
         </div>
         <div class="doc reveal d1">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
-          <div><b>End-to-end process and information-flow maps</b><span>Module flows, hierarchy and the path data takes between systems</span></div>
+          <div>
+            <b><span data-en>Process and information-flow maps</span><span data-zh>全局流程与信息流泳道图</span></b>
+            <span data-en>Module flows, hierarchy and the path data takes between systems</span>
+            <span data-zh>模块流程、层级梳理，以及数据在系统之间的流转路径</span>
+          </div>
         </div>
         <div class="doc reveal d2">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
-          <div><b>Product solution, phasing plan and kick-off documents</b><span>Three-phase roadmap, scope boundaries and collaboration mechanics</span></div>
+          <div>
+            <b><span data-en>Product solution and phasing plan</span><span data-zh>产品方案与分期计划</span></b>
+            <span data-en>Three-phase roadmap, scope boundaries and collaboration mechanics</span>
+            <span data-zh>三期路线、范围边界，以及项目启动会与协作机制</span>
+          </div>
         </div>
         <div class="doc reveal d3">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          <div><b>Market insight assistant · PRD and operating model</b><span>Product definition, the nine-step pipeline, and the full test and launch plan</span></div>
+          <div>
+            <b><span data-en>Market insight assistant · PRD and operating model</span><span data-zh>行情洞察助手 · PRD 与运转方式文档</span></b>
+            <span data-en>Product definition, the nine-step pipeline, and the full test and launch plan</span>
+            <span data-zh>产品定义、九步运转链路，以及完整的测评方案与上线标准</span>
+          </div>
         </div>
         <div class="doc reveal">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          <div><b>Master-data cleanup requirements</b><span>Data requirements and the finance-side boundary for the migration</span></div>
+          <div>
+            <b><span data-en>Master-data cleanup requirements</span><span data-zh>主数据清洗需求文档</span></b>
+            <span data-en>Data requirements and the finance-side boundary for the migration</span>
+            <span data-zh>清洗的数据要求与财务边界</span>
+          </div>
         </div>
         <div class="doc reveal d1">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
-          <div><b>9 AI knowledge-base guides and 5 rollout training cases</b><span>Written for finance users, not for engineers</span></div>
+          <div>
+            <b><span data-en>9 AI knowledge-base guides and 5 rollout cases</span><span data-zh>9 篇 AI 知识库文档与 5 篇推广用例</span></b>
+            <span data-en>Written for finance users, not for engineers</span>
+            <span data-zh>写给业务和财务人员看，不是写给工程师看</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ Contact ============ -->
+  <!-- ============ 联系 ============ -->
   <section id="contact" class="contact">
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="wrap">
-      <h2 class="reveal">If you only remember one line: I turn business problems into systems that go live, and hand the repetitive work to AI.</h2>
+      <h2 class="reveal">
+        <span data-en>If you only remember one line: I turn business problems into systems that go live, and hand the repetitive work to AI.</span>
+        <span data-zh>如果只记一句话：我把业务问题做成能上线的系统，把重复劳动交给 AI。</span>
+      </h2>
       <p class="lead reveal d1">
-        Available for digital product manager roles from the 2027 graduate season, in Chinese or English.
+        <span data-en>Available for digital product manager roles from the 2027 graduate season, in Chinese or English.</span>
+        <span data-zh>面向 2027 届秋招，数字化产品经理方向；中英文均可沟通与汇报。</span>
       </p>
       <div class="contact-grid reveal d2">
-        <div><span>Phone</span><b>(+86) 177 7119 5591</b></div>
-        <div><span>Email</span><b><a href="mailto:418794028@qq.com">418794028@qq.com</a></b></div>
-        <div><span>Portfolio PDF</span><b><a href="portfolio/Xin-Weicheng-Portfolio.pdf">15 pages, in Chinese</a></b></div>
-        <div><span>Live prototype</span><b><a href="prototype/index.html" target="_blank" rel="noopener">Market insight assistant</a></b></div>
+        <div>
+          <span data-en>Phone</span><span data-zh>电话</span>
+          <b>(+86) 177 7119 5591</b>
+        </div>
+        <div>
+          <span data-en>Email</span><span data-zh>邮箱</span>
+          <b><a href="mailto:418794028@qq.com">418794028@qq.com</a></b>
+        </div>
+        <div>
+          <span data-en>Portfolio PDF</span><span data-zh>作品集 PDF</span>
+          <b><a href="portfolio/Xin-Weicheng-Portfolio.pdf"><span data-en>15 pages, in Chinese</span><span data-zh>15 页，中文</span></a></b>
+        </div>
+        <div>
+          <span data-en>Live prototype</span><span data-zh>在线原型</span>
+          <b><a href="prototype/index.html" target="_blank" rel="noopener"><span data-en>Market insight assistant</span><span data-zh>行情洞察助手</span></a></b>
+        </div>
       </div>
       <div class="foot">
-        <span>© 2026 Weicheng Xin · Digital Product Manager</span>
-        <span>All data anonymised: internal links and system addresses removed, colleagues shown as role names, internal codes replaced with demo values.</span>
+        <span>© 2026 Weicheng Xin · <span data-en>Digital Product Manager</span><span data-zh>数字化产品经理</span></span>
+        <span>
+          <span data-en>Demo data and screenshots are anonymised.</span>
+          <span data-zh>演示数据与界面截图均已脱敏。</span>
+        </span>
       </div>
     </div>
   </section>
@@ -660,7 +917,46 @@
   document.documentElement.classList.add("js");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* 导航栏滚动态 + 顶部进度条 */
+  /* ---------------- 语言切换 ---------------- */
+  var root = document.documentElement;
+  var switchBtn = document.getElementById("langSwitch");
+  var TITLES = {
+    en: "Weicheng Xin · Digital Product Manager Portfolio",
+    zh: "辛伟城 · 数字化产品经理作品集"
+  };
+
+  function applyLang(lang) {
+    var next = lang === "zh" ? "zh" : "en";
+    root.setAttribute("data-lang", next);
+    root.setAttribute("lang", next === "zh" ? "zh-CN" : "en");
+    document.title = TITLES[next];
+    try { window.localStorage.setItem("portfolio-lang", next); } catch (err) { /* 私密模式忽略 */ }
+    document.querySelectorAll("[data-count]").forEach(function (el) {
+      if (el.dataset.done === "1") {
+        el.textContent = (el.getAttribute("data-prefix") || "") +
+          el.getAttribute("data-count") + suffixFor(el);
+      }
+    });
+  }
+
+  var saved = null;
+  try { saved = window.localStorage.getItem("portfolio-lang"); } catch (err) { saved = null; }
+  var initial = saved || ((navigator.language || "").toLowerCase().indexOf("zh") === 0 ? "zh" : "en");
+  applyLang(initial);
+
+  if (switchBtn) {
+    switchBtn.addEventListener("click", function () {
+      applyLang(root.getAttribute("data-lang") === "zh" ? "en" : "zh");
+    });
+    switchBtn.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        applyLang(root.getAttribute("data-lang") === "zh" ? "en" : "zh");
+      }
+    });
+  }
+
+  /* ---------------- 导航滚动与进度条 ---------------- */
   var nav = document.getElementById("nav");
   var progress = document.getElementById("progress");
 
@@ -675,7 +971,7 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* 进场动效 */
+  /* ---------------- 进场动效 ---------------- */
   var revealItems = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
   if (reduce || !("IntersectionObserver" in window)) {
     revealItems.forEach(function (el) { el.classList.add("in"); });
@@ -691,20 +987,27 @@
     revealItems.forEach(function (el) { observer.observe(el); });
   }
 
-  /* 首屏数字滚动 */
+  /* ---------------- 首屏数字滚动 ---------------- */
   var counters = Array.prototype.slice.call(document.querySelectorAll("[data-count]"));
+
+  function suffixFor(el) {
+    var isZh = root.getAttribute("data-lang") === "zh";
+    var zhSuffix = el.getAttribute("data-suffix-zh");
+    if (isZh && zhSuffix !== null) return zhSuffix;
+    return el.getAttribute("data-suffix") || "";
+  }
+
   function runCounter(el) {
     var target = parseFloat(el.getAttribute("data-count")) || 0;
     var prefix = el.getAttribute("data-prefix") || "";
-    var suffix = el.getAttribute("data-suffix") || "";
-    if (reduce) { el.textContent = prefix + target + suffix; return; }
+    el.dataset.done = "1";
+    if (reduce) { el.textContent = prefix + target + suffixFor(el); return; }
     var start = null;
-    var duration = 1100;
     function tick(ts) {
       if (start === null) start = ts;
-      var p = Math.min((ts - start) / duration, 1);
+      var p = Math.min((ts - start) / 1100, 1);
       var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = prefix + Math.round(target * eased) + suffix;
+      el.textContent = prefix + Math.round(target * eased) + suffixFor(el);
       if (p < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
@@ -723,18 +1026,18 @@
     counters.forEach(function (el) { counterObserver.observe(el); });
   }
 
-  /* 卡片轻微跟随鼠标的浮起效果（桌面端） */
+  /* ---------------- 卡片轻微跟随鼠标 ---------------- */
   if (!reduce && window.matchMedia("(hover: hover)").matches) {
-    document.querySelectorAll(".project").forEach(function (card) {
-      card.addEventListener("mousemove", function (event) {
-        var rect = card.getBoundingClientRect();
+    document.querySelectorAll(".project").forEach(function (cardEl) {
+      cardEl.addEventListener("mousemove", function (event) {
+        var rect = cardEl.getBoundingClientRect();
         var dx = (event.clientX - rect.left) / rect.width - 0.5;
         var dy = (event.clientY - rect.top) / rect.height - 0.5;
-        card.style.transform =
+        cardEl.style.transform =
           "translateY(-4px) rotateX(" + (-dy * 1.6).toFixed(2) + "deg) rotateY(" +
           (dx * 1.6).toFixed(2) + "deg)";
       });
-      card.addEventListener("mouseleave", function () { card.style.transform = ""; });
+      cardEl.addEventListener("mouseleave", function () { cardEl.style.transform = ""; });
     });
   }
 })();

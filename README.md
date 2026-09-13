@@ -9,7 +9,7 @@ processes into systems that actually ship.
 
 | Path | What it is |
 | --- | --- |
-| [`portfolio/Xin-Weicheng-Portfolio.pdf`](./portfolio/Xin-Weicheng-Portfolio.pdf) | 19-page portfolio (Chinese, desensitised): four case studies with product screenshots, numbers and design trade-offs |
+| [`portfolio/Xin-Weicheng-Portfolio.pdf`](./portfolio/Xin-Weicheng-Portfolio.pdf) | 15-page portfolio (Chinese, desensitised): four case studies with product screenshots, numbers and design trade-offs |
 | [`prototype/`](./prototype/) | Interactive high-fidelity prototype of a conversational market-insight assistant (HTML5 + CSS3 + vanilla JS, no framework, runs offline) |
 | [`index.html`](./index.html) | Landing page that links the two artifacts above |
 
