@@ -9,7 +9,7 @@ processes into systems that actually ship.
 
 | Path | What it is |
 | --- | --- |
-| [`portfolio/Xin-Weicheng-Portfolio-CN.pdf`](./portfolio/Xin-Weicheng-Portfolio-CN.pdf) | 19-page portfolio: four case studies with product screenshots, numbers and design trade-offs |
+| [`portfolio/Xin-Weicheng-Portfolio.pdf`](./portfolio/Xin-Weicheng-Portfolio.pdf) | 19-page portfolio (Chinese, desensitised): four case studies with product screenshots, numbers and design trade-offs |
 | [`prototype/`](./prototype/) | Interactive high-fidelity prototype of a conversational market-insight assistant (HTML5 + CSS3 + vanilla JS, no framework, runs offline) |
 | [`index.html`](./index.html) | Landing page that links the two artifacts above |
 
@@ -26,9 +26,8 @@ processes into systems that actually ship.
 
 ## Selected numbers
 
-- 85%+ of invoice and contract records, 90%+ of supplier records, and 70%+ of in-transit contracts and
-  drawdown records loaded into the master-data hub, saving the finance team 1-2 months of manual work
-- 80%+ dual-flow match rate on those documents, via MD5 hash, file size, text content and SAP links
+- 85%+ of invoice and contract records, 90%+ of supplier records loaded into the master-data hub
+- 80%+ match rate between the two legacy workflows (MD5 hash, file size, text content, SAP cross-links)
 - 8 accounting-automation requirements shipped, cutting average manual time by 80%
 - 47 of 62 six-language invoices passed automated review; the remaining 15 were classified and
   handed back to a human instead of being forced through
