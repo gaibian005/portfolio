@@ -26,7 +26,9 @@ processes into systems that actually ship.
 
 ## Selected numbers
 
-- 85%+ of invoice and contract records, 90%+ of supplier records loaded into the master-data hub
+- 85%+ of invoice and contract records, 90%+ of supplier records, and 70%+ of in-transit contracts and
+  drawdown records loaded into the master-data hub, saving the finance team 1-2 months of manual work
+- 80%+ dual-flow match rate on those documents, via MD5 hash, file size, text content and SAP links
 - 8 accounting-automation requirements shipped, cutting average manual time by 80%
 - 47 of 62 six-language invoices passed automated review; the remaining 15 were classified and
   handed back to a human instead of being forced through
