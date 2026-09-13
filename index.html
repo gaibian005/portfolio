@@ -344,6 +344,16 @@
   .js .reveal.d2.in { transition-delay: .16s; }
   .js .reveal.d3.in { transition-delay: .24s; }
   .js .reveal.d4.in { transition-delay: .32s; }
+  /* 首屏元素用动画入场，打开页面立刻能看到动效 */
+  .js .hero .reveal.in { animation: heroIn .8s cubic-bezier(.2, .8, .2, 1) both; }
+  .js .hero .reveal.d1.in { animation-delay: .08s; }
+  .js .hero .reveal.d2.in { animation-delay: .16s; }
+  .js .hero .reveal.d3.in { animation-delay: .24s; }
+  .js .hero .reveal.d4.in { animation-delay: .32s; }
+  @keyframes heroIn {
+    from { opacity: 0; transform: translateY(22px); }
+    to { opacity: 1; transform: none; }
+  }
 
   .progress {
     position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 120;
@@ -995,8 +1005,13 @@
 
   /* ---------------- 进场动效 ---------------- */
   var revealItems = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
-  if (reduce || !("IntersectionObserver" in window)) {
+
+  function revealAll() {
     revealItems.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  if (reduce || !("IntersectionObserver" in window)) {
+    revealAll();
   } else {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -1005,8 +1020,33 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    }, { threshold: 0.08, rootMargin: "0px 0px -4% 0px" });
     revealItems.forEach(function (el) { observer.observe(el); });
+
+    // 首屏元素立即入场，不等滚动
+    window.requestAnimationFrame(function () {
+      document.querySelectorAll(".hero .reveal").forEach(function (el) {
+        el.classList.add("in");
+        observer.unobserve(el);
+      });
+    });
+
+    // 兜底：若 2.5 秒内一个区块都没触发（观察器被环境禁用等），
+    // 才整体显示，保证内容永远可见，同时不影响正常的滚动动效
+    window.setTimeout(function () {
+      var triggered = document.querySelectorAll(".reveal.in").length;
+      if (triggered <= document.querySelectorAll(".hero .reveal").length) {
+        revealAll();
+      }
+      // 再兜一层：把仍未完全显示的元素直接复位，避免动画未执行时停在透明状态
+      document.querySelectorAll(".reveal").forEach(function (el) {
+        el.classList.add("in");
+        if (parseFloat(getComputedStyle(el).opacity) < 0.99) {
+          el.style.opacity = "1";
+          el.style.transform = "none";
+        }
+      });
+    }, 2500);
   }
 
   /* ---------------- 首屏数字滚动 ---------------- */
