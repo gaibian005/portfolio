@@ -14,6 +14,7 @@ into systems that actually shipped.
 | Path | What it is |
 | --- | --- |
 | [`index.html`](./index.html) | Bilingual landing page (English / Chinese switch) that links everything below |
+| [`resumes/`](./resumes/) | One-page resume: `Xin-Weicheng-Resume-EN.pdf` (English) and `Xin-Weicheng-Resume-CN.pdf` (Chinese) — the landing page links to whichever matches the selected language |
 | [`portfolio/Xin-Weicheng-Portfolio.pdf`](./portfolio/Xin-Weicheng-Portfolio.pdf) | 15-page portfolio in Chinese: four case studies with product screenshots, numbers and design trade-offs |
 | [`prototype/`](./prototype/) | Interactive high-fidelity prototype of a conversational market-insight assistant (HTML5 + CSS3 + vanilla JS, no framework, runs offline) |
 
@@ -71,6 +72,7 @@ Weicheng Xin · (+86) 177 7119 5591 · 418794028@qq.com
 | 路径 | 说明 |
 | --- | --- |
 | [`index.html`](./index.html) | 双语落地页（中英切换），作品集与原型的总入口 |
+| [`resumes/`](./resumes/) | 一页纸简历：`Xin-Weicheng-Resume-CN.pdf`（中文）与 `Xin-Weicheng-Resume-EN.pdf`（英文），落地页按当前语言自动指向对应版本 |
 | [`portfolio/Xin-Weicheng-Portfolio.pdf`](./portfolio/Xin-Weicheng-Portfolio.pdf) | 15 页中文作品集：四件作品，含系统截图、关键数字与设计取舍 |
 | [`prototype/`](./prototype/) | 可交互高保真原型：面向非专业投资者的对话式行情助手（HTML5 + CSS3 + 原生 JS，无框架，可离线运行） |
 

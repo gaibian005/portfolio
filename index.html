@@ -108,12 +108,16 @@
   html[data-lang="en"] .lang-switch .opt[data-for="en"],
   html[data-lang="zh"] .lang-switch .opt[data-for="zh"] { color: #fff; }
 
+  .nav-ctas { display: flex; align-items: center; gap: 8px; }
   .nav-cta {
-    font-size: 13.5px; font-weight: 600; padding: 8px 16px; border-radius: 999px;
+    font-size: 13px; font-weight: 600; padding: 8px 14px; border-radius: 999px;
     border: 1px solid var(--line); color: var(--navy); background: #fff; white-space: nowrap;
-    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease,
+                background .2s ease, color .2s ease;
   }
   .nav-cta:hover { transform: translateY(-1px); box-shadow: var(--shadow-s); border-color: #C9D6E6; }
+  .nav-cta.resume { background: var(--navy-2); color: #fff; border-color: var(--navy-2); }
+  .nav-cta.resume:hover { background: #123456; border-color: #123456; }
 
   /* ---------------- 首屏 ---------------- */
   .hero {
@@ -313,7 +317,7 @@
   html[data-lang="zh"] .contact h2 { font-size: clamp(22px, 3vw, 32px); letter-spacing: -.01em; }
   .contact .lead { margin-top: 16px; color: #A9BDD6; font-size: 15.5px; max-width: 640px; }
   .contact-grid {
-    margin-top: 42px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    margin-top: 42px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
     background: rgba(255, 255, 255, .13); border: 1px solid rgba(255, 255, 255, .13);
     border-radius: 14px; overflow: hidden;
   }
@@ -358,8 +362,11 @@
     .hero { padding: 132px 0 0; }
     section { padding: 72px 0; }
   }
+  @media (max-width: 1080px) {
+    .nav-cta.portfolio { display: none; }
+  }
   @media (max-width: 620px) {
-    .nav-cta { display: none; }
+    .nav-ctas { display: none; }
     .stats { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
   }
@@ -396,9 +403,16 @@
         <span class="opt" data-for="en">EN</span>
         <span class="opt" data-for="zh">中文</span>
       </button>
-      <a class="nav-cta" href="portfolio/Xin-Weicheng-Portfolio.pdf">
-        <span data-en>Portfolio PDF</span><span data-zh>作品集 PDF</span>
-      </a>
+      <div class="nav-ctas">
+        <a class="nav-cta resume" href="resumes/Xin-Weicheng-Resume-EN.pdf"
+           data-href-en="resumes/Xin-Weicheng-Resume-EN.pdf"
+           data-href-zh="resumes/Xin-Weicheng-Resume-CN.pdf">
+          <span data-en>Resume</span><span data-zh>我的简历</span>
+        </a>
+        <a class="nav-cta portfolio" href="portfolio/Xin-Weicheng-Portfolio.pdf">
+          <span data-en>Portfolio PDF</span><span data-zh>作品集 PDF</span>
+        </a>
+      </div>
     </div>
   </div>
 </header>
@@ -445,6 +459,13 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
           <span data-en>Open the live prototype</span>
           <span data-zh>打开可交互原型</span>
+        </a>
+        <a class="btn btn-ghost" href="resumes/Xin-Weicheng-Resume-EN.pdf"
+           data-href-en="resumes/Xin-Weicheng-Resume-EN.pdf"
+           data-href-zh="resumes/Xin-Weicheng-Resume-CN.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-3-3.87"/><path d="M4 21v-2a4 4 0 0 1 3-3.87"/><circle cx="12" cy="7" r="4"/></svg>
+          <span data-en>View my resume</span>
+          <span data-zh>查看我的简历</span>
         </a>
       </div>
 
@@ -885,6 +906,17 @@
       </p>
       <div class="contact-grid reveal d2">
         <div>
+          <span data-en>Resume</span><span data-zh>简历</span>
+          <b>
+            <a href="resumes/Xin-Weicheng-Resume-EN.pdf"
+               data-href-en="resumes/Xin-Weicheng-Resume-EN.pdf"
+               data-href-zh="resumes/Xin-Weicheng-Resume-CN.pdf">
+              <span data-en>One page, in English</span>
+              <span data-zh>一页纸，中文</span>
+            </a>
+          </b>
+        </div>
+        <div>
           <span data-en>Phone</span><span data-zh>电话</span>
           <b>(+86) 177 7119 5591</b>
         </div>
@@ -895,6 +927,10 @@
         <div>
           <span data-en>Portfolio PDF</span><span data-zh>作品集 PDF</span>
           <b><a href="portfolio/Xin-Weicheng-Portfolio.pdf"><span data-en>15 pages, in Chinese</span><span data-zh>15 页，中文</span></a></b>
+        </div>
+        <div>
+          <span data-en>Case studies</span><span data-zh>作品层级</span>
+          <b><a href="#work"><span data-en>Four pieces, three tiers</span><span data-zh>四件作品，三个层级</span></a></b>
         </div>
         <div>
           <span data-en>Live prototype</span><span data-zh>在线原型</span>
@@ -934,6 +970,11 @@
     root.setAttribute("lang", next === "zh" ? "zh-CN" : "en");
     document.title = TITLES[next];
     try { window.localStorage.setItem("portfolio-lang", next); } catch (err) { /* 私密模式忽略 */ }
+    // 简历有两份（中文版 / 英文版），跟随语言切换指向对应文件
+    document.querySelectorAll("[data-href-en][data-href-zh]").forEach(function (el) {
+      var target = next === "zh" ? el.getAttribute("data-href-zh") : el.getAttribute("data-href-en");
+      if (target) el.setAttribute("href", target);
+    });
     document.querySelectorAll("[data-count]").forEach(function (el) {
       if (el.dataset.done === "1") {
         el.textContent = (el.getAttribute("data-prefix") || "") +
