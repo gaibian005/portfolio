@@ -3,29 +3,160 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Redirecting - Weicheng Xin Portfolio</title>
-<meta http-equiv="refresh" content="0; url=https://gaibian005.github.io/Interactive-prototype/">
-<link rel="canonical" href="https://gaibian005.github.io/Interactive-prototype/">
+<title>Weicheng Xin - Digital Product Manager Portfolio</title>
+<meta name="description" content="Portfolio of Weicheng Xin, a digital product manager focused on finance digitalisation and hands-on AI delivery.">
 <style>
-  body {
-    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
-    color: #15212F; background: #F5F7FB; text-align: center; padding: 24px;
+  :root {
+    --navy: #0F2B46;
+    --blue: #2563EB;
+    --blue-light: #EAF1FE;
+    --ink: #15212F;
+    --gray: #5B6675;
+    --line: #DCE3EC;
+    --bg: #F5F7FB;
   }
-  .box { max-width: 460px; }
-  h1 { font-size: 20px; color: #0F2B46; margin: 0 0 10px; }
-  p { color: #5B6675; font-size: 14px; line-height: 1.7; }
-  a { color: #2563EB; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+                 "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    color: var(--ink);
+    background: #fff;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  header { border-top: 5px solid var(--navy); padding: 64px 0 40px; }
+  .eyebrow { color: var(--blue); font-weight: 700; font-size: 13px; letter-spacing: .04em; }
+  h1 { font-size: 40px; margin: 10px 0 6px; color: var(--navy); letter-spacing: -.01em; }
+  h2.role { font-size: 19px; color: var(--blue); margin: 0 0 22px; font-weight: 700; }
+  .lede { font-size: 17px; color: var(--ink); max-width: 720px; }
+  .lede-zh { color: var(--gray); font-size: 14px; margin-top: 8px; }
+  .chips { margin: 22px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips li {
+    background: var(--blue-light); color: #1B4FD8; font-size: 13px; font-weight: 600;
+    padding: 5px 13px; border-radius: 999px;
+  }
+  section { padding: 36px 0; border-top: 1px solid var(--line); }
+  h3 { font-size: 19px; color: var(--navy); margin: 0 0 16px; }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  .card {
+    display: block; text-decoration: none; color: inherit;
+    border: 1px solid var(--line); border-radius: 12px; padding: 20px;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .card:hover { border-color: var(--blue); transform: translateY(-2px); }
+  .card .k { font-size: 12px; font-weight: 700; color: var(--blue); letter-spacing: .04em; text-transform: uppercase; }
+  .card .t { font-size: 17px; font-weight: 700; color: var(--navy); margin: 6px 0; }
+  .card .d { font-size: 14px; color: var(--gray); margin: 0; }
+  ul.plain { padding-left: 20px; margin: 0; }
+  ul.plain li { margin-bottom: 10px; }
+  .stats { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .stat { background: var(--bg); border-radius: 10px; padding: 16px; }
+  .stat b { display: block; font-size: 22px; color: var(--blue); line-height: 1.2; }
+  .stat span { font-size: 13px; color: var(--gray); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: var(--navy); color: #fff; font-weight: 600; }
+  th:first-child { border-top-left-radius: 8px; }
+  th:last-child { border-top-right-radius: 8px; }
+  footer { padding: 32px 0 60px; color: var(--gray); font-size: 13px; border-top: 1px solid var(--line); }
+  a { color: var(--blue); }
+  @media (max-width: 560px) { h1 { font-size: 30px; } header { padding-top: 40px; } }
 </style>
 </head>
 <body>
-  <div class="box">
-    <h1>Weicheng Xin - Portfolio</h1>
-    <p>
-      This repository is an alias. The portfolio now lives at<br>
-      <a href="https://gaibian005.github.io/Interactive-prototype/">https://gaibian005.github.io/Interactive-prototype/</a>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">2027 GRADUATE · PORTFOLIO</div>
+    <h1>Weicheng Xin</h1>
+    <h2 class="role">Digital Product Manager</h2>
+    <p class="lede">
+      I understand finance operations, and I can turn processes into systems that actually ship.
+      My work sits between business and engineering: defining the problem, designing the solution,
+      and removing the repetitive work with AI and scripts.
     </p>
-    <p>If you are not redirected automatically, use the link above.</p>
+    <p class="lede-zh">
+      懂财务业务，也能用 AI 把流程做成能上线的系统。
+    </p>
+    <ul class="chips">
+      <li>Finance &amp; Audit Background</li>
+      <li>End-to-end Product Delivery</li>
+      <li>Hands-on AI Implementation</li>
+    </ul>
   </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h3>Start here</h3>
+    <div class="grid">
+      <a class="card" href="../portfolio/Xin-Weicheng-Portfolio-CN.pdf">
+        <div class="k">PDF · 18 pages</div>
+        <div class="t">Portfolio</div>
+        <p class="d">Four case studies: an overseas expense control system, master-data cleanup,
+        a conversational market-insight assistant, and AI automation in finance.</p>
+      </a>
+      <a class="card" href="./prototype/">
+        <div class="k">Live prototype · mobile</div>
+        <div class="t">Market Insight Assistant</div>
+        <p class="d">A clickable high-fidelity prototype of a conversational assistant for
+        non-expert investors, with evidence chains and a tri-state attribution model.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>Selected numbers</h3>
+    <div class="stats">
+      <div class="stat"><b>85%+</b><span>invoice &amp; contract data loaded into the master-data hub</span></div>
+      <div class="stat"><b>90%+</b><span>supplier data loaded into the master-data hub</span></div>
+      <div class="stat"><b>535 / 671</b><span>contracts matched via technical fingerprinting</span></div>
+      <div class="stat"><b>8</b><span>accounting-automation requirements shipped, 80% less manual time</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>Experience</h3>
+    <table>
+      <tr><th>Period</th><th>Role</th><th>Focus</th></tr>
+      <tr><td>May - Aug 2026</td><td>COROS · Finance Department</td>
+          <td>Overseas expense control system: phase-1 requirements, solution design, master-data migration</td></tr>
+      <tr><td>Nov 2025 - Jan 2026</td><td>Dewu · AI Operations</td>
+          <td>10+ AI use cases scoped across finance and data operations; rollout and adoption</td></tr>
+      <tr><td>Jun - Sep 2025</td><td>Tianzhi International CPA</td>
+          <td>FMCG IPO audit: working papers, walkthrough testing, internal control findings</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h3>About this repository</h3>
+    <ul class="plain">
+      <li><code>portfolio/</code> - the 19-page portfolio PDF (desensitised; demo data only).</li>
+      <li><code>prototype/</code> - source of the interactive market-insight prototype
+          (HTML5 + CSS3 + vanilla JavaScript, no framework, runs offline).</li>
+    </ul>
+    <p style="color: var(--gray); font-size: 14px; margin-top: 16px;">
+      All company-internal data in this repository has been desensitised: personal names are replaced
+      with role names, internal links and system addresses removed, and figures shown are either
+      verified counts or clearly stated estimates.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Weicheng Xin · (+86) 177 7119 5591 · 418794028@qq.com<br>
+    Central South University of Forestry and Technology · BSc Finance · Class of 2027
+  </div>
+</footer>
+
 </body>
 </html>
