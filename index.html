@@ -384,6 +384,7 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .js .reveal { opacity: 1; transform: none; }
+    .js .hero .reveal.in { animation: none; opacity: 1; transform: none; }
     .orb, .pulse::after { animation: none; }
     * { transition-duration: .01ms !important; }
   }
@@ -403,7 +404,7 @@
     <nav class="nav-links">
       <a href="#work"><span data-en>Work</span><span data-zh>作品</span></a>
       <a href="#timeline"><span data-en>Timeline</span><span data-zh>经历</span></a>
-      <a href="#skills"><span data-en>Skills</span><span data-zh>能力</span></a>
+      <a href="#how"><span data-en>How I work</span><span data-zh>方法</span></a>
       <a href="#documents"><span data-en>Deliverables</span><span data-zh>交付物</span></a>
       <a href="#contact"><span data-en>Contact</span><span data-zh>联系</span></a>
     </nav>
@@ -444,27 +445,25 @@
       </span>
 
       <h1 class="reveal d1">
-        <span data-en>Finance background, comfortable with AI,<br><span class="accent">and I have shipped a system.</span></span>
-        <span data-zh>懂财务业务，能熟练用 AI，<br><span class="accent">也做出过真正上线的系统。</span></span>
+        <span data-en>I find the thread in messy information,<br><span class="accent">and turn problems into things that ship.</span></span>
+        <span data-zh>复杂信息的处理者：<br><span class="accent">在混乱里理出头绪，<br>把问题做成能上线的东西。</span></span>
       </h1>
 
       <p class="hero-sub reveal d2">
         <span data-en>
-          Three internships took me from audit into product work. I have learned to pin down the problem with the
-          people who use the system, write requirements a development team can work from, and handle the repetitive
-          parts with scripts and AI.
+          Led the cleanup of 10,000+ legacy documents; helped take an expense control system from requirements to
+          launch; independently designed an AI market-insight product.
         </span>
         <span data-zh>
-          三段实习，我从审计做到产品。做需求时我会先和使用系统的人把问题确认清楚，再写成研发能直接开工的方案；
-          其中重复、易错的部分，我自己用脚本和 AI 处理掉。
+          主导过上万份旧单据的清洗重构；完整参与海外费控系统从需求到上线；独立设计过一款 AI 行情解读产品。
         </span>
       </p>
 
       <div class="hero-actions reveal d3">
         <a class="btn btn-primary" href="portfolio/Xin-Weicheng-Portfolio.pdf">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-          <span data-en>Read the 14-page portfolio</span>
-          <span data-zh>查看 14 页作品集</span>
+          <span data-en>Read the portfolio</span>
+          <span data-zh>查看作品集</span>
         </a>
         <a class="btn btn-ghost" href="prototype/index.html" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
@@ -481,21 +480,82 @@
       </div>
 
       <div class="chips reveal d4">
-        <span class="chip" data-en>Finance &amp; audit background</span>
-        <span class="chip" data-zh>财务与审计背景</span>
-        <span class="chip" data-en>End-to-end product delivery</span>
-        <span class="chip" data-zh>产品全流程交付</span>
-        <span class="chip" data-en>Master data engineering</span>
-        <span class="chip" data-zh>主数据治理</span>
-        <span class="chip" data-en>Hands-on AI implementation</span>
-        <span class="chip" data-zh>AI 落地实现</span>
+        <span class="chip" data-en>Information gathering</span>
+        <span class="chip" data-zh>信息收集</span>
+        <span class="chip" data-en>Problem solving</span>
+        <span class="chip" data-zh>问题解决</span>
+        <span class="chip" data-en>Product delivery</span>
+        <span class="chip" data-zh>产品落地</span>
       </div>
 
     </div>
   </section>
 
   <!-- ============ 作品 ============ -->
-  <section id="work">
+  <section id="how" class="band">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-kicker"><span data-en>How I work</span><span data-zh>我怎么工作</span></div>
+        <h2>
+          <span data-en>Ask the right people, cross-check, then decide</span>
+          <span data-zh>问对的人，交叉验证，再变成判断</span>
+        </h2>
+        <p>
+          <span data-en>Complex problems are usually not solved by a clever idea. They are solved by getting the information straight first.</span>
+          <span data-zh>复杂的问题很少靠一个聪明点子解决，通常是先把信息对齐，剩下的选择自然就清楚了。</span>
+        </p>
+      </div>
+      <div class="grid-3">
+        <div class="card reveal">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 21l1.9-4.6A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/></svg>
+          </div>
+          <h4><span data-en>1 · Ask the right people</span><span data-zh>1 · 问对的人</span></h4>
+          <p>
+            <span data-en>Finance, business users and developers each hold part of the answer. I talked to all three before writing anything.</span>
+            <span data-zh>财务、业务、研发各掌握一部分答案。写方案之前，这三方我都问了一遍。</span>
+          </p>
+          <div class="flow">
+            <span data-en>Finance</span><span data-zh>财务</span>
+            <span data-en>Business</span><span data-zh>业务</span>
+            <span data-en>Engineering</span><span data-zh>研发</span>
+          </div>
+        </div>
+        <div class="card reveal d1">
+          <div class="ico" style="background: var(--teal-soft); color: var(--teal);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+          </div>
+          <h4><span data-en>2 · Cross-check what they say</span><span data-zh>2 · 交叉验证</span></h4>
+          <p>
+            <span data-en>They did not always agree. I matched each claim against the approval records, kept the confirmed facts, and listed the rest as open items.</span>
+            <span data-zh>三方说法并不一致。我把每种说法和审批记录对了一遍，确认过的写进需求，没对齐的记成待确认清单。</span>
+          </p>
+          <div class="flow">
+            <span data-en>Interviews</span><span data-zh>访谈</span>
+            <span data-en>Records</span><span data-zh>审批记录</span>
+            <span data-en>Open items</span><span data-zh>待确认清单</span>
+          </div>
+        </div>
+        <div class="card reveal d2">
+          <div class="ico" style="background: var(--green-soft); color: var(--green);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h4><span data-en>3 · Turn it into a decision</span><span data-zh>3 · 变成判断</span></h4>
+          <p>
+            <span data-en>Once the information lines up, the remaining choice is a product decision — and it has to be something a team can build.</span>
+            <span data-zh>信息对齐之后，剩下的选择就是产品判断——而且这个判断必须能落成研发做得了的东西。</span>
+          </p>
+          <div class="flow">
+            <span data-en>Scope</span><span data-zh>范围</span>
+            <span data-en>Trade-offs</span><span data-zh>取舍</span>
+            <span data-en>Acceptance</span><span data-zh>验收标准</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section id="work">
     <div class="wrap">
       <div class="sec-head reveal">
         <div class="sec-kicker"><span data-en>Selected work</span><span data-zh>作品</span></div>
@@ -523,40 +583,34 @@
             <span class="tier"><span data-en>★ Main project</span><span data-zh>★ 主案例</span></span>
             <h3><span data-en>Overseas expense control system</span><span data-zh>海外费用控制系统</span></h3>
             <div class="role">
-              <span data-en>COROS Sports Technology · Finance digitalisation · May–Sep 2026 · Second product manager</span>
+              <span data-en>COROS Sports Technology · May–Sep 2026 · Second product manager</span>
               <span data-zh>高驰 COROS · 财务部 · 2026.05–09 · 二号产品经理</span>
             </div>
             <ul>
-              <li><span data-en>Wrote the phase-one requirements and the product solution: nine modules covering suppliers, contracts, invoices, payment write-offs, accounting vouchers, permissions and coding rules.</span>
-                  <span data-zh>负责一期需求与产品方案：九个模块，含供应商、合同、发票、付款核销、核算凭证、权限与编码规则。</span></li>
-              <li><span data-en>Designed three approval flows that run independently, and defined how the system talks to the master data hub, SAP, Feishu and Docusign.</span>
-                  <span data-zh>设计三条独立流转的审批流，并理清系统与主数据中心、SAP、飞书、Docusign 的对接关系。</span></li>
-              <li><span data-en>Cleaned more than ten thousand legacy documents into master data that the system could go live on.</span>
-                  <span data-zh>把上万份旧单据清洗重构为可上线使用的主数据。</span></li>
-              <li><span data-en>The system went live on 1 September 2026. Development finished 20 days ahead of the plan.</span>
-                  <span data-zh>系统于 2026 年 9 月 1 日上线，开发完成比计划提前 20 天。</span></li>
+              <li>
+                <span data-en>Wrote the phase-one requirements and product solution: nine modules covering suppliers, contracts, invoices, payment write-offs, accounting vouchers, permissions and coding rules.</span>
+                <span data-zh>负责一期需求与产品方案：九个模块，含供应商、合同、发票、付款核销、核算凭证、权限与编码规则。</span>
+              </li>
+              <li>
+                <span data-en>Led the cleanup of legacy documents into master data the system could go live on.</span>
+                <span data-zh>主导旧流程主数据清洗与重构，把上万份单据变成可上线使用的主数据。</span>
+              </li>
+              <li>
+                <span data-en><b>From information to a decision</b>: finance said the expense breakdown had to be adjusted inside the payment form, while business users never touched it — so I treated it as a bookkeeping step rather than an approval step and moved it out of the approval chain.</span>
+                <span data-zh><b>来源 → 判断</b>：财务说费用明细要在付款单里调整，业务却从不看这一块 → 判断这是记账动作而不是审批动作，把它从审批链里拆出去。</span>
+              </li>
             </ul>
           </div>
           <div class="metrics">
             <div class="metric">
               <b>2026.09.01</b>
-              <span data-en>System went live</span>
-              <span data-zh>系统正式上线</span>
+              <span data-en>System went live; development finished 20 days early</span>
+              <span data-zh>系统上线，开发提前 20 天完成</span>
             </div>
             <div class="metric">
               <b><span data-en>9 modules</span><span data-zh>9 个模块</span></b>
-              <span data-en>Requirements and solution written by me</span>
+              <span data-en>Requirements and solution owned by me</span>
               <span data-zh>需求与方案由我负责</span>
-            </div>
-            <div class="metric">
-              <b><span data-en>−20 days</span><span data-zh>提前 20 天</span></b>
-              <span data-en>Development finished ahead of the plan</span>
-              <span data-zh>开发完成早于计划</span>
-            </div>
-            <div class="metric">
-              <b><span data-en>1–2 months</span><span data-zh>1–2 个月</span></b>
-              <span data-en>Manual finance workload saved by the cleanup</span>
-              <span data-zh>清洗工作直接减少的财务工作量</span>
             </div>
           </div>
         </article>
@@ -569,36 +623,36 @@
               <span data-zh>单据主数据清洗与重构</span>
             </h3>
             <div class="role">
-              <span data-en>Data owner · 2026 · Tens of thousands of files, two disconnected workflows</span>
-              <span data-zh>数据负责人 · 2026 · 上万份文件 · 两条互不相连的流程</span>
+              <span data-en>Data owner · 2026 · Tens of thousands of files</span>
+              <span data-zh>数据负责人 · 2026 · 上万份文件</span>
             </div>
             <ul>
-              <li><span data-en>Split the cleanup into 11 parallel sections, which reduced write conflicts on the database and kept the model's attention from drifting.</span>
-                  <span data-zh>把清洗拆成 11 个并行小节，减少数据库写入冲突，也让模型注意力不容易发散。</span></li>
-              <li><span data-en>Extracted the text layer first, fell back to OCR for scans, and used multimodal parsing for hard layouts; everything came out as JSON into SQLite.</span>
-                  <span data-zh>文字层能提取的优先提取，扫描件用 OCR 兜底，复杂排版用多模态；结果统一输出 JSON 写入 SQLite。</span></li>
-              <li><span data-en>Matched records through two independent trails: the file itself (MD5 hash, size, text) against the document-to-SAP path.</span>
-                  <span data-zh>用两套独立线索勾稽：文件本身的哈希、大小与文本内容，对比单据到 SAP 的链路。</span></li>
-              <li><span data-en>Records that failed or came out low-confidence went to a separate queue with the reason recorded, so nothing failed silently.</span>
-                  <span data-zh>失败和低置信的记录进入单独的待处理队列并记录原因，不静默跳过。</span></li>
+              <li>
+                <span data-en>Split the cleanup into 11 layered sections and matched records through two independent trails before anything was written.</span>
+                <span data-zh>把清洗拆成 11 个分层小节，两套独立线索都指向同一结果才落库。</span>
+              </li>
+              <li>
+                <span data-en>Records that failed or came out low-confidence went to a separate human queue with the reason recorded.</span>
+                <span data-zh>失败与低置信的记录进入待处理队列并记录原因，不静默跳过。</span>
+              </li>
             </ul>
           </div>
           <div class="metrics">
-            <div class="metric"><b>85%+</b>
-              <span data-en>Invoice and contract records into the master-data hub</span>
-              <span data-zh>发票与合同信息进入主数据中心</span></div>
-            <div class="metric"><b>90%+</b>
-              <span data-en>Supplier records into the master-data hub</span>
-              <span data-zh>供应商信息进入主数据中心</span></div>
-            <div class="metric"><b>70%+</b>
-              <span data-en>In-transit contracts, drawdowns and exceptions</span>
-              <span data-zh>在途合同、提款单核销记录及异常项</span></div>
-            <div class="metric"><b>80%+</b>
+            <div class="metric">
+              <b>85%+ / 90%+</b>
+              <span data-en>Invoice, contract and supplier records loaded into the master-data hub</span>
+              <span data-zh>发票合同与供应商信息进入主数据中心</span>
+            </div>
+            <div class="metric">
+              <b>80%+</b>
               <span data-en>Dual-flow match rate</span>
-              <span data-zh>双流程勾稽率</span></div>
-            <div class="metric"><b><span data-en>8 automations</span><span data-zh>8 个自动化需求</span></b>
-              <span data-en>Shipped in the same period, cutting average manual time by 80%</span>
-              <span data-zh>同期落地，平均工作耗时缩短 80%</span></div>
+              <span data-zh>双流程勾稽率</span>
+            </div>
+            <div class="metric">
+              <b><span data-en>1–2 months</span><span data-zh>1–2 个月</span></b>
+              <span data-en>Manual finance workload saved by the cleanup</span>
+              <span data-zh>清洗工作直接减少的财务工作量</span>
+            </div>
           </div>
         </article>
 
@@ -614,29 +668,27 @@
               <span data-zh>腾讯 AI 训练营 · 产品经理 · 2026.08–09</span>
             </div>
             <ul>
-              <li><span data-en>Defined a conversational assistant for people without a finance background: plain-language briefings, plus monitoring of price, flow and news anomalies on their watchlist.</span>
-                  <span data-zh>面向没有金融背景的普通投资者：把行情讲成白话，同时监测自选标的的量价、资金与舆情异动。</span></li>
-              <li><span data-en>Designed the nine-step pipeline from data collection to feedback, with RAG evidence and a compliance check before anything reaches the user.</span>
-                  <span data-zh>设计从数据采集到行为回流的九步链路，中间经 RAG 取证与合规校验后才触达用户。</span></li>
-              <li><span data-en>Made "can it be trusted" a mechanism rather than a promise: three output states (evidence / weak evidence / unknown), each conclusion backed by an evidence chain the user can open.</span>
-                  <span data-zh>把「可不可信」做成机制而不是话术：有据 / 弱据 / 存疑三种输出态，每条结论都附可展开的证据链。</span></li>
-              <li><span data-en>Set the launch criteria myself: L1–L4 grading, four red lines, and a rollback switch that has to be rehearsed before launch.</span>
-                  <span data-zh>上线标准由我拟定：L1–L4 定级、四条红线，回滚开关必须演练通过才允许上线。</span></li>
+              <li>
+                <span data-en>Defined the product form and the pipeline: 24/7 anomaly detection on watchlist instruments, with an evidence chain behind every conclusion.</span>
+                <span data-zh>定义产品形态与运转链路：监测自选标的异动，每条结论都附可展开的证据链。</span>
+              </li>
+              <li>
+                <span data-en>Made "we could not verify this" a legitimate output, so the model never has to bluff.</span>
+                <span data-zh>让「暂无可验证归因」成为一个正式的输出态，模型不必硬答。</span>
+              </li>
             </ul>
           </div>
           <div class="metrics">
-            <div class="metric"><b>L3 / L4</b>
-              <span data-en>Staged rollout at L3; full launch at L4 with complaints ≤ 4%</span>
-              <span data-zh>达 L3 可灰度；灰度稳定达 L4 且投诉率 ≤4% 可全量</span></div>
-            <div class="metric"><b><span data-en>4 red lines</span><span data-zh>4 条红线</span></b>
-              <span data-en>Any hit means no-go — including a failed "unknown" state</span>
-              <span data-zh>任一命中即不上线，含「存疑机制失效」</span></div>
-            <div class="metric"><b><span data-en>9 steps</span><span data-zh>9 步链路</span></b>
-              <span data-en>From data collection to behaviour feedback</span>
-              <span data-zh>从数据采集到行为回流</span></div>
-            <div class="metric"><b><span data-en>Live</span><span data-zh>已上线</span></b>
-              <span data-en>Clickable high-fidelity prototype, open to anyone</span>
-              <span data-zh>可交互高保真原型，任何人可打开</span></div>
+            <div class="metric">
+              <b>L3 / L4</b>
+              <span data-en>Launch bar set by me: staged rollout at L3, full launch at L4 with complaints ≤ 4%</span>
+              <span data-zh>上线门槛由我拟定：达 L3 可灰度，稳定达 L4 且投诉率 ≤4% 可全量</span>
+            </div>
+            <div class="metric">
+              <b><span data-en>Live</span><span data-zh>已上线</span></b>
+              <span data-en>Clickable high-fidelity prototype</span>
+              <span data-zh>可交互高保真原型</span>
+            </div>
           </div>
         </article>
 
@@ -648,31 +700,31 @@
               <span data-zh>欧盟产品准入合规研究</span>
             </h3>
             <div class="role">
-              <span data-en>KPMG briefing on EU market access · research and company-view analysis</span>
+              <span data-en>KPMG briefing on EU market access</span>
               <span data-zh>毕马威欧盟产品准入会议纪要 · 研究与公司视角分析</span>
             </div>
             <ul>
-              <li><span data-en>Went through three regimes and their timelines: IAA, CBAM and the Deforestation Regulation.</span>
-                  <span data-zh>梳理三部主要法案及其时间节点：工业加速法案 IAA、碳边境调节机制 CBAM、零毁林监管法案 DR。</span></li>
-              <li><span data-en>Read the trend as follows: vague and case-driven in the short term, focused on social and governance issues over five years, and moving towards hard environmental requirements in the long run.</span>
-                  <span data-zh>对趋势的判断：短期规则模糊、依赖判例；五年内集中在社会与治理层面；长期会增加环境方面的硬性要求。</span></li>
-              <li><span data-en>Concluded that compliance is rarely a yes-or-no question. It comes down to structured data and a confidence judgement, which is why I leave room for change when scoping a system.</span>
-                  <span data-zh>结论是合规很少能用「是」或「否」回答，要靠结构化数据判断概率；所以我在设计系统时会预留调整空间。</span></li>
+              <li>
+                <span data-en>Went through IAA, CBAM and the Deforestation Regulation, and read the trend: vague now, tighter over time.</span>
+                <span data-zh>梳理 IAA、CBAM 与零毁林监管三部法案，判断趋势：短期模糊，长期收紧。</span>
+              </li>
+              <li>
+                <span data-en>Concluded that compliance needs structured data and a confidence judgement, so systems deserve room to change.</span>
+                <span data-zh>结论是合规要靠结构化数据判断概率，所以系统设计要预留调整空间。</span>
+              </li>
             </ul>
           </div>
           <div class="metrics">
-            <div class="metric"><b><span data-en>3 regimes</span><span data-zh>3 部法案</span></b>
+            <div class="metric">
+              <b><span data-en>3 regimes</span><span data-zh>3 部法案</span></b>
               <span data-en>IAA · CBAM · Deforestation Regulation</span>
-              <span data-zh>IAA · CBAM · 零毁林监管法案</span></div>
-            <div class="metric"><b>190+</b>
-              <span data-en>Tariff lines and quotas proposed under CBAM</span>
-              <span data-zh>CBAM 拟新增的关税税目与配额</span></div>
-            <div class="metric"><b>2027.09.30</b>
+              <span data-zh>IAA · CBAM · 零毁林监管法案</span>
+            </div>
+            <div class="metric">
+              <b>2027.09.30</b>
               <span data-en>First quota declaration deadline for importers</span>
-              <span data-zh>进口商首次配额年度申报截止</span></div>
-            <div class="metric"><b><span data-en>Design redundancy</span><span data-zh>设计冗余</span></b>
-              <span data-en>What it changed in how I scope systems</span>
-              <span data-zh>它改变了我设计系统时的习惯</span></div>
+              <span data-zh>进口商首次配额年度申报截止</span>
+            </div>
           </div>
         </article>
 
@@ -680,7 +732,7 @@
     </div>
   </section>
 
-  <!-- ============ 时间线 ============ -->
+
   <section id="timeline" class="band">
     <div class="wrap">
       <div class="sec-head reveal">
@@ -690,8 +742,8 @@
           <span data-zh>从审计，到 AI 运营，再到一套上线的系统</span>
         </h2>
         <p>
-          <span data-en>Three internships, each one building on what the previous one taught me.</span>
-          <span data-zh>三段实习是递进的，后一段都在用前一段学到的东西。</span>
+          <span data-en>Each internship taught me one part of the same job: get the information straight, then make the problem go away.</span>
+          <span data-zh>三段实习各教会我一件事，合起来就是同一件事：先把信息弄明白，再把问题解决掉。</span>
         </p>
       </div>
       <div class="timeline">
@@ -699,185 +751,82 @@
           <div class="tl-date">MAY – SEP 2026</div>
           <div class="tl-title"><span data-en>COROS · Finance digitalisation</span><span data-zh>高驰 COROS · 财务数字化</span></div>
           <div class="tl-body">
-            <span data-en>
-              Second product manager on the overseas expense control system. Requirements were finished at the end
-              of May, the solution was settled in early June, development was done on 25 August (20 days ahead of
-              plan), acceptance ran 26–27 August, UAT 27–31 August, and the system went live on 1 September.
-            </span>
-            <span data-zh>
-              海外费控系统二号产品经理。需求在 5 月底完成，方案 6 月初定稿，开发 8 月 25 日完成（比计划提前 20 天），
-              产品验收 8 月 26–27 日，UAT 8 月 27–31 日，9 月 1 日上线。
-            </span>
+            <span data-en>Turned a decision into a system: phase-one requirements and solution, plus the master-data cleanup that made go-live possible.</span>
+            <span data-zh>把判断做成系统：负责一期需求与产品方案，并完成让系统能上线的主数据清洗。</span>
           </div>
         </div>
         <div class="tl-item reveal d1">
           <div class="tl-date">NOV 2025 – JAN 2026</div>
           <div class="tl-title"><span data-en>Dewu · AI operations</span><span data-zh>上海得物 · AI 运营</span></div>
           <div class="tl-body">
-            <span data-en>
-              Tracked LLM, agent and tooling market movement and development routes; published weekly and monthly
-              reports; supported agile delivery and rollout for AI products and automation tools.
-            </span>
-            <span data-zh>
-              跟踪大模型、Agent 与配套工具的市场动态和开发路线，输出周报与月报；支撑 AI 产品与自动化工具的敏捷开发与推广。
-            </span>
+            <span data-en>Learned to turn raw information into judgement: market tracking on LLMs and agents, written up as weekly and monthly reports.</span>
+            <span data-zh>学会把信息整理成判断：跟踪大模型与 Agent 的市场动态，输出周报与月报。</span>
           </div>
         </div>
         <div class="tl-item reveal d2">
           <div class="tl-date">JUN – SEP 2025</div>
           <div class="tl-title"><span data-en>Tianzhi International CPA · FMCG IPO audit</span><span data-zh>天职国际会计师事务所 · 快消 IPO 审计</span></div>
           <div class="tl-body">
-            <span data-en>
-              Prepared AR/AP working papers and ran walkthrough tests covering document to statement. While
-              standardising data for due diligence I found two control gaps: rebate expenses had no automated
-              validation, and related-party flows were tagged by hand.
-            </span>
-            <span data-zh>
-              编制应收应付科目底稿，做「单据 → 业务 → 原始凭证 → 记账凭证 → 明细账 → 总账 → 报表」的完整穿行测试。
-              在尽调中整理财务数据时发现两处内控问题：返利费用没有自动校验，关联方资金往来靠人工标记。
-            </span>
+            <span data-en>Learned that information has to trace all the way: walkthrough tests from document to statement, and two control gaps found along the way.</span>
+            <span data-zh>学会信息要一路对到底：做「单据 → 凭证 → 账簿 → 报表」的完整穿行测试，并发现两处内控问题。</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ 能力 ============ -->
-  <section id="skills">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <div class="sec-kicker"><span data-en>How I work</span><span data-zh>工作方式</span></div>
-        <h2>
-          <span data-en>Product work and AI work, in the same loop</span>
-          <span data-zh>产品与 AI，在同一条链路里</span>
-        </h2>
-        <p>
-          <span data-en>Product defines the problem and the acceptance bar; AI and scripts remove the repetitive part in between.</span>
-          <span data-zh>产品负责把问题和验收标准定义清楚，AI 与脚本负责把中间重复的部分做掉。</span>
-        </p>
-      </div>
-      <div class="grid-3">
-        <div class="card reveal">
-          <div class="ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-          </div>
-          <h4><span data-en>Product: six steps, each with an artefact</span><span data-zh>产品：六步闭环，每步都有交付物</span></h4>
-          <p>
-            <span data-en>Every step produces something the next person can use — no step ends in a conversation only.</span>
-            <span data-zh>每一步都留下别人能接着用的东西，不把工作停在口头沟通上。</span>
-          </p>
-          <div class="flow">
-            <span data-en>Interviews</span><span data-zh>业务访谈</span>
-            <span data-en>Scope</span><span data-zh>界定边界</span>
-            <span data-en>Process</span><span data-zh>流程与信息流</span>
-            <span data-en>Requirements</span><span data-zh>需求与方案</span>
-            <span data-en>Dev hand-off</span><span data-zh>开发对接</span>
-            <span data-en>Acceptance</span><span data-zh>验收与上线</span>
-          </div>
-        </div>
-        <div class="card reveal d1">
-          <div class="ico" style="background: var(--teal-soft); color: var(--teal);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
-          </div>
-          <h4><span data-en>Data: two trails before anything is trusted</span><span data-zh>数据：两套线索互相印证才落库</span></h4>
-          <p>
-            <span data-en>File fingerprint against system path. Two independent trails must agree, or the record goes to a human.</span>
-            <span data-zh>文件指纹对比系统链路，两条独立线索一致才写入，否则交回人工。</span>
-          </p>
-          <div class="flow">
-            <span data-en>Extraction</span><span data-zh>文本提取</span>
-            <span data-en>OCR</span><span data-zh>OCR 兜底</span>
-            <span data-en>11 parallel sections</span><span data-zh>11 个分层小节</span>
-            <span data-en>Cross-check</span><span data-zh>交叉勾稽</span>
-            <span data-en>JSON + Excel</span><span data-zh>JSON + Excel</span>
-          </div>
-        </div>
-        <div class="card reveal d2">
-          <div class="ico" style="background: var(--green-soft); color: var(--green);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
-          </div>
-          <h4><span data-en>AI: an agent is more than a model</span><span data-zh>AI：Agent 不只是模型</span></h4>
-          <p>
-            <span data-en>Model, tools, permissions, state, execution loop and acceptance rules. The last two decide whether it can run in production.</span>
-            <span data-zh>Agent = 模型 + 工具 + 权限 + 状态 + 执行循环 + 验收规则；后两项决定它能不能上生产。</span>
-          </p>
-          <div class="flow">
-            <span>Codex</span><span>Gemini</span>
-            <span data-en>Agent workflows</span><span data-zh>Agent 工作流</span>
-            <span data-en>Prompt engineering</span><span data-zh>提示词工程</span>
-            <span data-en>Acceptance rules</span><span data-zh>验收规则</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 交付物 ============ -->
   <section id="documents" class="band">
     <div class="wrap">
       <div class="sec-head reveal">
         <div class="sec-kicker"><span data-en>Deliverables</span><span data-zh>交付物</span></div>
         <h2>
-          <span data-en>What I wrote, shipped and can open on request</span>
-          <span data-zh>我写过、交付过、可以随时展开给你看的东西</span>
+          <span data-en>What you can open right now</span>
+          <span data-zh>可以直接打开的东西</span>
         </h2>
         <p>
-          <span data-en>Everything below exists as a real artefact. Ask about any of them in an interview and I will walk through it.</span>
-          <span data-zh>下面每一项都是真实存在的文档与系统，面试时可以按需展开任意一项。</span>
+          <span data-en>Everything below is a real artefact. Pick whichever one you want to look at first.</span>
+          <span data-zh>下面每一项都是真实产出的文档或系统，你想先看哪一个都可以。</span>
         </p>
       </div>
       <div class="docs">
-        <div class="doc reveal">
+        <a class="doc reveal" href="portfolio/Xin-Weicheng-Portfolio.pdf">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
           <div>
-            <b><span data-en>Front- and back-end requirements</span><span data-zh>新系统前后端需求文档</span></b>
-            <span data-en>Approval flows, base data, entities, documents, accounting vouchers, permissions, coding rules</span>
-            <span data-zh>审批流、基础数据、实体、单据、核算凭证、权限与编码规则</span>
+            <b><span data-en>Portfolio</span><span data-zh>作品集</span></b>
+            <span data-en>Ten pages: the information behind each project, and the decisions I made.</span>
+            <span data-zh>十页：每件作品的信息来源与关键判断。</span>
           </div>
-        </div>
-        <div class="doc reveal d1">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+        </a>
+        <a class="doc reveal d1" href="resumes/Xin-Weicheng-Resume-CN.pdf"
+           data-href-en="resumes/Xin-Weicheng-Resume-EN.pdf"
+           data-href-zh="resumes/Xin-Weicheng-Resume-CN.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-3-3.87"/><path d="M4 21v-2a4 4 0 0 1 3-3.87"/><circle cx="12" cy="7" r="4"/></svg>
           <div>
-            <b><span data-en>Process and information-flow maps</span><span data-zh>全局流程与信息流泳道图</span></b>
-            <span data-en>Module flows, hierarchy and the path data takes between systems</span>
-            <span data-zh>模块流程、层级梳理，以及数据在系统之间的流转路径</span>
+            <b><span data-en>Resume</span><span data-zh>简历</span></b>
+            <span data-en>One page, in English or Chinese — it follows the language you pick.</span>
+            <span data-zh>一页纸，中文或英文版随当前语言切换。</span>
           </div>
-        </div>
-        <div class="doc reveal d2">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+        </a>
+        <a class="doc reveal d2" href="prototype/index.html" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
           <div>
-            <b><span data-en>Product solution and phasing plan</span><span data-zh>产品方案与分期计划</span></b>
-            <span data-en>Three-phase roadmap, scope boundaries and collaboration mechanics</span>
-            <span data-zh>三期路线、范围边界，以及项目启动会与协作机制</span>
+            <b><span data-en>Interactive prototype</span><span data-zh>可交互原型</span></b>
+            <span data-en>Click through the market-insight assistant: briefings, evidence chains, and the "cannot verify" state.</span>
+            <span data-zh>点开就能操作：白话解读、证据链，以及「暂无可验证」的存疑状态。</span>
           </div>
-        </div>
-        <div class="doc reveal d3">
+        </a>
+        <a class="doc reveal d3" href="https://gaibian005.github.io/Interactive-prototype/" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           <div>
-            <b><span data-en>Market insight assistant · PRD and operating model</span><span data-zh>行情洞察助手 · PRD 与运转方式文档</span></b>
-            <span data-en>Product definition, the nine-step pipeline, and the full test and launch plan</span>
-            <span data-zh>产品定义、九步运转链路，以及完整的测评方案与上线标准</span>
+            <b><span data-en>Prototype (original link)</span><span data-zh>原型原始链接</span></b>
+            <span data-en>The first published version of the prototype, kept as it was.</span>
+            <span data-zh>最早发布的那一版原型，保留原样。</span>
           </div>
-        </div>
-        <div class="doc reveal">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          <div>
-            <b><span data-en>Master-data cleanup requirements</span><span data-zh>主数据清洗需求文档</span></b>
-            <span data-en>Data requirements and the finance-side boundary for the migration</span>
-            <span data-zh>清洗的数据要求与财务边界</span>
-          </div>
-        </div>
-        <div class="doc reveal d1">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
-          <div>
-            <b><span data-en>9 AI knowledge-base guides and 5 rollout cases</span><span data-zh>9 篇 AI 知识库文档与 5 篇推广用例</span></b>
-            <span data-en>Written for finance users, not for engineers</span>
-            <span data-zh>写给业务和财务人员看，不是写给工程师看</span>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
+
 
   <!-- ============ 联系 ============ -->
   <section id="contact" class="contact">
@@ -914,7 +863,7 @@
         </div>
         <div>
           <span data-en>Portfolio PDF</span><span data-zh>作品集 PDF</span>
-          <b><a href="portfolio/Xin-Weicheng-Portfolio.pdf"><span data-en>14 pages, in Chinese</span><span data-zh>14 页，中文</span></a></b>
+          <b><a href="portfolio/Xin-Weicheng-Portfolio.pdf"><span data-en>Chinese</span><span data-zh>中文</span></a></b>
         </div>
         <div>
           <span data-en>Case studies</span><span data-zh>作品层级</span>
@@ -962,12 +911,6 @@
     document.querySelectorAll("[data-href-en][data-href-zh]").forEach(function (el) {
       var target = next === "zh" ? el.getAttribute("data-href-zh") : el.getAttribute("data-href-en");
       if (target) el.setAttribute("href", target);
-    });
-    document.querySelectorAll("[data-count]").forEach(function (el) {
-      if (el.dataset.done === "1") {
-        el.textContent = (el.getAttribute("data-prefix") || "") +
-          el.getAttribute("data-count") + suffixFor(el);
-      }
     });
   }
 
@@ -1047,45 +990,6 @@
         }
       });
     }, 2500);
-  }
-
-  /* ---------------- 首屏数字滚动 ---------------- */
-  var counters = Array.prototype.slice.call(document.querySelectorAll("[data-count]"));
-
-  function suffixFor(el) {
-    var isZh = root.getAttribute("data-lang") === "zh";
-    var zhSuffix = el.getAttribute("data-suffix-zh");
-    if (isZh && zhSuffix !== null) return zhSuffix;
-    return el.getAttribute("data-suffix") || "";
-  }
-
-  function runCounter(el) {
-    var target = parseFloat(el.getAttribute("data-count")) || 0;
-    var prefix = el.getAttribute("data-prefix") || "";
-    el.dataset.done = "1";
-    if (reduce) { el.textContent = prefix + target + suffixFor(el); return; }
-    var start = null;
-    function tick(ts) {
-      if (start === null) start = ts;
-      var p = Math.min((ts - start) / 1100, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = prefix + Math.round(target * eased) + suffixFor(el);
-      if (p < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
-  if (!("IntersectionObserver" in window)) {
-    counters.forEach(runCounter);
-  } else {
-    var counterObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          runCounter(entry.target);
-          counterObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.4 });
-    counters.forEach(function (el) { counterObserver.observe(el); });
   }
 
   /* ---------------- 卡片轻微跟随鼠标 ---------------- */
