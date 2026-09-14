@@ -2,8 +2,7 @@
 
 **English** ｜ [中文](#中文)
 
-Digital product manager, 2027 graduate. I find the thread in messy information, and turn problems into
-things that ship.
+I find the thread in messy information, and turn problems into things that ship.
 
 Live site: <https://gaibian005.github.io/portfolio/>
 
@@ -19,7 +18,7 @@ Contact: (+86) 177 7119 5591 · 418794028@qq.com
 
 ## 中文
 
-数字化产品经理，2027 届。复杂信息的处理者：在混乱里理出头绪，把问题做成能上线的东西。
+复杂信息的处理者：在混乱里理出头绪，把问题做成能上线的东西。
 
 在线作品集：<https://gaibian005.github.io/portfolio/>
 
