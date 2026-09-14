@@ -2,7 +2,7 @@
 
 **English** ｜ [中文](#中文)
 
-I find the thread in messy information, and turn problems into things that ship.
+I find the thread in messy information, and turn pain points into products that ship.
 
 Live site: <https://gaibian005.github.io/portfolio/>
 
@@ -18,7 +18,7 @@ Contact: (+86) 177 7119 5591 · 418794028@qq.com
 
 ## 中文
 
-复杂信息的处理者：在混乱里理出头绪，把问题做成能上线的东西。
+复杂信息的处理者：在混乱里理出头绪，把痛点做成能上线的产品。
 
 在线作品集：<https://gaibian005.github.io/portfolio/>
 

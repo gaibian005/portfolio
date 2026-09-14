@@ -254,6 +254,14 @@
   .metric { background: var(--bg); border-radius: 13px; padding: 15px 16px; border: 1px solid #EDF1F6; }
   .metric b { display: block; font-size: 22px; color: var(--navy); letter-spacing: -.02em; line-height: 1.2; }
   .metric span { display: block; margin-top: 5px; font-size: 12.5px; color: var(--gray); }
+  .case-link {
+    display: inline-flex; align-items: center; gap: 7px; margin-top: 20px;
+    font-size: 14.5px; font-weight: 600; color: var(--blue); text-decoration: none;
+    border-bottom: 1px solid transparent; transition: border-color .2s ease;
+  }
+  .case-link:hover { border-bottom-color: var(--blue); }
+  .case-link .arrow { transition: transform .22s cubic-bezier(.2, .8, .2, 1); }
+  .case-link:hover .arrow { transform: translateX(3px); }
 
   /* ---------------- 时间线 ---------------- */
   .timeline { margin-top: 44px; position: relative; padding-left: 22px; }
@@ -308,14 +316,12 @@
   .doc span { display: block; margin-top: 4px; font-size: 13px; color: var(--gray); }
 
   /* ---------------- 联系 ---------------- */
-  .contact { background: var(--navy); color: #fff; padding: 92px 0 56px; position: relative; overflow: hidden; }
+  .contact { background: var(--navy); color: #fff; padding: 76px 0 56px; position: relative; overflow: hidden; }
   .contact .orb-1 { top: -180px; left: -80px; right: auto; opacity: .18;
                     background: radial-gradient(circle at 30% 30%, #4F7FD6, transparent 70%); }
   .contact .orb-2 { bottom: -200px; right: -60px; left: auto; opacity: .16;
                     background: radial-gradient(circle at 40% 40%, #2FA8A8, transparent 70%); }
-  .contact h2 { font-size: clamp(24px, 3.4vw, 38px); letter-spacing: -.03em; max-width: 700px; }
-  html[data-lang="zh"] .contact h2 { font-size: clamp(22px, 3vw, 32px); letter-spacing: -.01em; }
-  .contact .lead { margin-top: 16px; color: #A9BDD6; font-size: 15.5px; max-width: 640px; }
+  .contact .lead { margin-top: 0; color: #C3D3E6; font-size: 16.5px; max-width: 680px; }
   .contact-grid {
     margin-top: 42px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
     background: rgba(255, 255, 255, .13); border: 1px solid rgba(255, 255, 255, .13);
@@ -439,8 +445,8 @@
     <div class="grid-lines"></div>
     <div class="wrap">
       <h1 class="reveal d1">
-        <span data-en>I find the thread in messy information,<br><span class="accent">and turn problems into things that ship.</span></span>
-        <span data-zh>复杂信息的处理者：<br><span class="accent">在混乱里理出头绪，<br>把问题做成能上线的东西。</span></span>
+        <span data-en>I find the thread in messy information,<br><span class="accent">and turn pain points into products that ship.</span></span>
+        <span data-zh>复杂信息的处理者：<br><span class="accent">在混乱里理出头绪，<br>把痛点做成能上线的产品。</span></span>
       </h1>
 
       <p class="hero-sub reveal d2">
@@ -459,17 +465,17 @@
           <span data-en>Read the portfolio</span>
           <span data-zh>查看作品集</span>
         </a>
-        <a class="btn btn-ghost" href="prototype/index.html" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-          <span data-en>Open the live prototype</span>
-          <span data-zh>打开可交互原型</span>
-        </a>
         <a class="btn btn-ghost" href="resumes/Xin-Weicheng-Resume-EN.pdf"
            data-href-en="resumes/Xin-Weicheng-Resume-EN.pdf"
            data-href-zh="resumes/Xin-Weicheng-Resume-CN.pdf">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-3-3.87"/><path d="M4 21v-2a4 4 0 0 1 3-3.87"/><circle cx="12" cy="7" r="4"/></svg>
           <span data-en>View my resume</span>
           <span data-zh>查看我的简历</span>
+        </a>
+        <a class="btn btn-ghost" href="prototype/index.html" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+          <span data-en>Open the live prototype</span>
+          <span data-zh>打开可交互原型</span>
         </a>
       </div>
 
@@ -582,8 +588,8 @@
             </div>
             <ul>
               <li>
-                <span data-en>Wrote the phase-one requirements and product solution: nine modules covering suppliers, contracts, invoices, payment write-offs, accounting vouchers, permissions and coding rules.</span>
-                <span data-zh>负责一期需求与产品方案：九个模块，含供应商、合同、发票、付款核销、核算凭证、权限与编码规则。</span>
+                <span data-en>Wrote the phase-one requirements and product solution: nine modules covering suppliers, contracts, invoices, documents (payment, reimbursement, write-off), accounting vouchers, master data, permissions, coding rules and statistics.</span>
+                <span data-zh>负责一期需求与产品方案：九个模块，覆盖供应商、合同、发票、单据（付款/报销/核销）、核算凭证、财务主数据、权限、编码规则与数据统计。</span>
               </li>
               <li>
                 <span data-en>Led the cleanup of legacy documents into master data the system could go live on.</span>
@@ -602,11 +608,16 @@
               <span data-zh>系统上线，开发提前 20 天完成</span>
             </div>
             <div class="metric">
-              <b><span data-en>9 modules</span><span data-zh>9 个模块</span></b>
-              <span data-en>Requirements and solution owned by me</span>
-              <span data-zh>需求与方案由我负责</span>
+              <b><span data-en>3 approval flows</span><span data-zh>3 条审批流</span></b>
+              <span data-en>Contract · payment · write-off, each flowing on its own</span>
+              <span data-zh>合同 · 付款单 · 核销单，各自独立流转</span>
             </div>
           </div>
+          <a class="case-link" href="case/overseas-expense/index.html">
+            <span data-en>Read the full case study</span>
+            <span data-zh>读完这个案例</span>
+            <span class="arrow" aria-hidden="true">&#8594;</span>
+          </a>
         </article>
 
         <article class="project reveal d1" style="--accent: #0F8A8A; --accent-soft: #E3F4F4; --accent-text: #0B6E6E;">
@@ -622,12 +633,12 @@
             </div>
             <ul>
               <li>
-                <span data-en>Split the cleanup into 11 layered sections and matched records through two independent trails before anything was written.</span>
-                <span data-zh>把清洗拆成 11 个分层小节，两套独立线索都指向同一结果才落库。</span>
+                <span data-en>Mining: text-layer extraction, OCR and multimodal recognition on 10,000+ legacy documents; scripts plus LLM judgement to clean and restructure.</span>
+                <span data-zh>挖掘：文本层提取、OCR 与多模态识别，抓取上万份旧单据的关键数据；再用脚本加大模型语义判断清洗重构。</span>
               </li>
               <li>
-                <span data-en>Records that failed or came out low-confidence went to a separate human queue with the reason recorded.</span>
-                <span data-zh>失败与低置信的记录进入待处理队列并记录原因，不静默跳过。</span>
+                <span data-en>Reconciliation and output: MD5 hash, file size, text content and multi-hop SAP links pushed the dual-flow match rate above 80%; output was JSON and Excel fit for the master-data hub and finance audit. Failures went to a human queue with the reason recorded.</span>
+                <span data-zh>勾稽与输出：文件哈希 MD5、文件大小、文本内容与 SAP 多跳把双流程勾稽率做到 80%+，产出可进主数据中心与财务审计的 JSON 和 Excel；失败与低置信记录进人工队列并记录原因。</span>
               </li>
             </ul>
           </div>
@@ -663,20 +674,26 @@
             </div>
             <ul>
               <li>
-                <span data-en>Defined the product form and the pipeline: 24/7 anomaly detection on watchlist instruments, with an evidence chain behind every conclusion.</span>
-                <span data-zh>定义产品形态与运转链路：监测自选标的异动，每条结论都附可展开的证据链。</span>
+                <span data-en>The problem: people see a watchlist stock move but not why. Market apps give numbers, not explanations, and never reach out first.</span>
+                <span data-zh>解决的问题：用户看到自选股异动却不知道发生了什么——行情产品只给数字不给解释，也不会主动找人。</span>
               </li>
               <li>
-                <span data-en>Made "we could not verify this" a legitimate output, so the model never has to bluff.</span>
-                <span data-zh>让「暂无可验证归因」成为一个正式的输出态，模型不必硬答。</span>
+                <span data-en>There is no single right answer for why a price moved, so "verified / weak / unverifiable" all had to be legitimate outputs, and the launch bar had to be defined by me.</span>
+                <span data-zh>为什么没有标准答案：涨跌归因本就没有唯一正解，所以「有据 / 弱据 / 存疑」都要能作为正式输出，上线门槛也只能自己定。</span>
+              </li>
+              <li>
+                <span data-en>The solution: a conversational assistant that pushes an alert the moment an anomaly fires, and attaches an expandable evidence chain to every conclusion instead of bluffing.</span>
+                <span data-zh>解决方案：做成对话式异动解读助手——异动发生时主动推送提醒，每条结论附可展开的证据链，弱据与存疑如实标注，而不是硬答。</span>
               </li>
             </ul>
           </div>
           <div class="metrics">
             <div class="metric">
-              <b>L3 / L4</b>
-              <span data-en>Launch bar set by me: staged rollout at L3, full launch at L4 with complaints ≤ 4%</span>
-              <span data-zh>上线门槛由我拟定：达 L3 可灰度，稳定达 L4 且投诉率 ≤4% 可全量</span>
+              <b><span data-en>Nine-step pipeline</span><span data-zh>九步链路</span></b>
+              <span data-en>Collect → normalise → rule alerts → RAG evidence → attribution</span>
+              <span data-zh>数据采集 → 标准化 → 规则监测 → RAG 取证 → 大模型归因</span>
+              <span data-en>→ fact / compliance check → conversation → human review → feedback loop</span>
+              <span data-zh>→ 事实合规校验 → 对话触达 → 人工分级审核 → 行为回流</span>
             </div>
             <div class="metric">
               <b><span data-en>Live</span><span data-zh>已上线</span></b>
@@ -819,10 +836,6 @@
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="wrap">
-      <h2 class="reveal">
-        <span data-en>If you only remember one line: I find the thread in messy information, and turn problems into things that ship.</span>
-        <span data-zh>如果只记一句话：在混乱里理出头绪，把问题做成能上线的东西。</span>
-      </h2>
       <p class="lead reveal d1">
         <span data-en>Open to new opportunities and collaborations; happy to work in Chinese or English.</span>
         <span data-zh>开放新的机会与合作；中英文均可沟通与汇报。</span>
