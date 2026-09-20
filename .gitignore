@@ -1,0 +1,42 @@
+# ---------------------------------------------------------------
+# 作品集网站仓库的忽略规则
+# 目的：防止系统垃圾、编辑器临时文件、以及不该公开的原始材料被误提交
+# ---------------------------------------------------------------
+
+# 操作系统
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器 / Office 临时文件
+.vscode/
+.idea/
+~$*
+*.tmp
+*.bak
+*.swp
+
+# Python（生成作品集与简历 PDF 的脚本会用到）
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# 密钥与本地配置（永远不要提交）
+.env
+.env.*
+*.key
+*.pem
+secrets.*
+
+# 原始材料：Word 原稿、PRD、内部材料（只提交导出的 PDF）
+*.docx
+*.doc
+*.pptx
+*.xlsx
+prd*.pdf
+PRD*.pdf
