@@ -151,7 +151,7 @@ html[data-lang="zh"] .eyebrow { letter-spacing: .04em; }
   100% { opacity: 0; }
 }
 
-.hero h1 { margin: 26px 0 0; font-size: clamp(38px, 6.2vw, 70px); letter-spacing: -.035em; color: var(--navy); }
+.hero h1 { margin: 26px 0 0; font-size: clamp(38px, 6.2vw, 70px); letter-spacing: -.035em; color: var(--navy); text-wrap: balance; }
 .hero h1 .accent {
   background: linear-gradient(100deg, var(--blue) 0%, #4F46E5 55%, var(--teal) 100%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
